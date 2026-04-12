@@ -1,0 +1,39 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment Variables (Secrets)
+.env
+.env.local
+.env.*.local
+
+# Node dependencies
+node_modules/
+
+# Build folders
+dist/
+build/
+.next/
+out/
+
+# Logs
+logs
+*.log
+
+# Python (if backend uses Python)
+__pycache__/
+*.pyc
+venv/
+
+# Database
+*.sqlite3
+*.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Misc
+coverage/
+.cache/
+.temp/
