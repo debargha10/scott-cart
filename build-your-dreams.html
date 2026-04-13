@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Build Your Dreams | SCOTT CART</title>
-    <meta name="description" content="Sunglasses-focused page for SCOTT CART with aspirational styling and product cards." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,45 +14,31 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
-        </div>
-        <nav class="site-nav">
-          <a href="drops.html">Drops</a>
-          <a href="sneakers.html">Sneakers</a>
-          <a href="new-arrivals.html">New Arrivals</a>
-          <a href="signature-collections.html">Signature</a>
-          <a class="is-active" href="build-your-dreams.html">Build Dreams</a>
-          <a href="featuring-lil-uzi-vert.html">Lil Uzi Vert</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Build Your Dreams</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="cart.html">Cart <span data-cart-count>0</span></a>
+          </div>
         </div>
       </header>
-      <main>
-        <section class="subpage-hero">
-          <div class="subpage-copy reveal">
+      <main class="page-main">
+        <section>
+          <div class="section-header reveal">
             <p class="eyebrow">Build Your Dreams</p>
-            <h1>Sunglasses with a brighter luxury story.</h1>
-            <p>This route takes over the old button idea and turns it into a proper product destination focused on statement eyewear.</p>
+            <h1 class="section-title">Sunglasses now have their own destination.</h1>
           </div>
-          <div class="subpage-panel reveal delay-1">
-            <div class="stat-row">
-              <div class="stat-item"><strong>Category</strong>Sunglasses and eyewear for lifestyle-led styling.</div>
-              <div class="stat-item"><strong>Visual tone</strong>Glossy frames, clean shadows, and editorial polish.</div>
-            </div>
+          <div class="product-grid">
+            <article class="product-card reveal"><a href="product.html?product=halo-frame"><div class="product-visual"></div></a><p class="mini-label">Sunglasses</p><h3>Halo Frame</h3><div class="price-row"><span class="price-tag">₹3,800</span><a class="product-link" href="product.html?product=halo-frame">View Product</a></div></article>
+            <article class="product-card reveal delay-1"><a href="product.html?product=mirror-drift"><div class="product-visual"></div></a><p class="mini-label">Sunglasses</p><h3>Mirror Drift</h3><div class="price-row"><span class="price-tag">₹4,100</span><a class="product-link" href="product.html?product=mirror-drift">View Product</a></div></article>
+            <article class="product-card reveal delay-2"><a href="product.html?product=solar-tint"><div class="product-visual"></div></a><p class="mini-label">Sunglasses</p><h3>Solar Tint</h3><div class="price-row"><span class="price-tag">₹3,950</span><a class="product-link" href="product.html?product=solar-tint">View Product</a></div></article>
           </div>
-        </section>
-        <section class="product-grid">
-          <article class="product-card reveal"><div class="product-visual"></div><p class="mini-label">Sunglasses 01</p><h3>Halo Frame</h3><p class="product-meta">Round lens frame with glossy edges and light gold detailing.</p><div class="price-row"><span class="price-tag">₹3,800</span><button class="primary-button" type="button" data-add-to-cart data-name="Halo Frame" data-price="3800" data-category="Sunglasses">Add to Cart</button></div></article>
-          <article class="product-card reveal delay-1"><div class="product-visual"></div><p class="mini-label">Sunglasses 02</p><h3>Mirror Drift</h3><p class="product-meta">Reflective lens finish designed for a bold fashion-tech look.</p><div class="price-row"><span class="price-tag">₹4,100</span><button class="primary-button" type="button" data-add-to-cart data-name="Mirror Drift" data-price="4100" data-category="Sunglasses">Add to Cart</button></div></article>
-          <article class="product-card reveal delay-2"><div class="product-visual"></div><p class="mini-label">Sunglasses 03</p><h3>Solar Tint</h3><p class="product-meta">Warm-tone lenses for a softer, more aspirational street-luxury mood.</p><div class="price-row"><span class="price-tag">₹3,950</span><button class="primary-button" type="button" data-add-to-cart data-name="Solar Tint" data-price="3950" data-category="Sunglasses">Add to Cart</button></div></article>
         </section>
       </main>
-      <footer class="footer-shell"><div class="footer-panel"><span>This page now gives Build Your Dreams a real product purpose.</span><span>Sunglasses can evolve into a richer category later.</span></div></footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>

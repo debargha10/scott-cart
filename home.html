@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCOTT CART</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header">
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html" aria-label="Back to home">⌂</a>
+            <a class="brand-lockup" href="home.html">
+              <span class="logo-mark"></span>
+              <span class="logo-copy">
+                <strong>SCOTT CART</strong>
+                <span>Dark luxury storefront</span>
+              </span>
+            </a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>Log In / Sign Up</a>
+            <a class="utility-link" href="cart.html">Cart <span data-cart-count>0</span></a>
+          </div>
+        </div>
+        <div class="header-tools">
+          <nav class="site-nav">
+            <a class="is-active" href="home.html">Home</a>
+            <a href="drops.html">Drops</a>
+            <a href="sneakers.html">Sneakers</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a href="featuring-lil-uzi-vert.html">Featuring Lil Uzi Vert</a>
+          </nav>
+          <div class="button-row">
+            <a class="secondary-button" href="explore-experience.html">Explore Experience</a>
+            <a class="secondary-button" href="foundation.html">View Foundation</a>
+            <a class="secondary-button" href="build-your-dreams.html">Build Your Dreams</a>
+            <a class="secondary-button" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-main">
+        <section class="hero">
+          <div>
+            <p class="eyebrow reveal">Apple-inspired, darker, cleaner</p>
+            <h1 class="hero-title reveal delay-1">A black product-first experience with separate shopping worlds.</h1>
+            <p class="copy reveal delay-2">The navbar is slimmer now, the utility buttons sit outside it, the interface is predominantly black, and the site is routed around dedicated product pages, profile rules, checkout rules, and stronger product storytelling.</p>
+            <div class="hero-note reveal delay-3">
+              Free shipping all over India. Remote areas are not available. Cash on delivery is not supported.
+            </div>
+            <div class="hero-actions reveal delay-3">
+              <a class="primary-button" href="drops.html">Enter Drops</a>
+              <a class="secondary-button" href="profile.html">My Profile</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal delay-2">
+            <div class="scene" data-tilt-card>
+              <div class="scene-grid"></div>
+              <div class="plate one"></div>
+              <div class="plate two"></div>
+              <div class="scene-panel">
+                <strong class="mini-label">Model Selector</strong>
+                <h3>Men Women Kids</h3>
+                <p class="copy">Tap a model segment and open a compact gallery with matching editorial tiles.</p>
+                <div class="model-tabs" style="margin-top: 16px;">
+                  <button class="pill-button" type="button" data-model-tab="Men">Men</button>
+                  <button class="pill-button" type="button" data-model-tab="Women">Women</button>
+                  <button class="pill-button" type="button" data-model-tab="Kids">Kids</button>
+                </div>
+              </div>
+              <div class="scene-chip one">Black UI</div>
+              <div class="scene-chip two">Login before cart</div>
+              <div class="scene-chip three">India shipping</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-header reveal">
+            <p class="eyebrow">Destinations</p>
+            <h2 class="section-title">Open dedicated pages instead of scrolling a crowded homepage.</h2>
+          </div>
+          <div class="grid-3">
+            <a class="card reveal" href="drops.html"><p class="mini-label">Dropwear</p><h3>Drops</h3><p class="copy">Six clothing types plus a separate sneaker route.</p></a>
+            <a class="card reveal delay-1" href="new-arrivals.html"><p class="mini-label">Fresh</p><h3>New Arrivals</h3><p class="copy">Latest products routed to their own product pages.</p></a>
+            <a class="card reveal delay-2 special-surface" href="featuring-lil-uzi-vert.html"><p class="mini-label">Special</p><h3>Featuring Lil Uzi Vert</h3><p class="copy">A different colored page with artist-only products and timed offers.</p></a>
+          </div>
+        </section>
+      </main>
+
+      <div class="model-modal hidden" data-model-modal>
+        <div class="model-modal-card">
+          <div class="price-row">
+            <h3 data-model-title>Models</h3>
+            <button class="ghost-button" type="button" data-close-model>Close</button>
+          </div>
+          <div class="model-gallery" data-model-grid></div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="copyright">Debargha-2026. All rights reserved</div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -4,198 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SCOTT CART</title>
-    <meta
-      name="description"
-      content="SCOTT CART is an Apple-inspired luxury fashion commerce concept with premium design, dedicated pages, cart, login, payment, and personalized themes."
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="welcome">
     <div class="page-shell">
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
-      <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html" aria-label="SCOTT CART home">
-            <span class="brand-mark">SC</span>
-            <span class="brand-text">SCOTT CART</span>
-          </a>
-        </div>
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="drops.html">Drops</a>
-          <a href="sneakers.html">Sneakers</a>
-          <a href="new-arrivals.html">New Arrivals</a>
-          <a href="signature-collections.html">Signature</a>
-          <a href="build-your-dreams.html">Build Your Dreams</a>
-          <a href="featuring-lil-uzi-vert.html">Lil Uzi Vert</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle>
-            <span class="theme-dot"></span>
-            <span class="theme-label">Cloud</span>
-          </button>
-          <a class="icon-link" href="locations.html">Locations</a>
-          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
-          <a class="icon-link" href="contact.html">Contact</a>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
-        </div>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow reveal">A Concept Of Being Limitless</p>
-            <h1 class="hero-title reveal delay-1">A Drips to Drop experience with product depth.</h1>
-            <p class="hero-description reveal delay-2">
-              SCOTT CART now moves beyond one landing page into a full luxury
-              commerce concept with immersive visuals, dedicated shopping worlds,
-              login flow, cart, theme switching, payment options, and saved
-              locations built for India-first delivery.
-            </p>
-            <div class="hero-actions reveal delay-3">
-              <a class="primary-button" href="explore-experience.html">Explore Experience</a>
-              <a class="secondary-button" href="foundation.html">View Foundation</a>
+      <main class="page-main">
+        <section class="welcome-shell">
+          <div class="welcome-copy">
+            <p class="eyebrow">Welcome Sequence</p>
+            <h1 class="welcome-title">A dark luxury entry into the SCOTT CART universe.</h1>
+            <div class="welcome-lines">
+              <div class="welcome-line copy">Premium fashion storefront with a cinematic black interface.</div>
+              <div class="welcome-line copy">Dedicated product pages with angles, size charts, and gated purchase actions.</div>
+              <div class="welcome-line copy">Login, profile, locations, cart, and payment flow shaped for India-first commerce.</div>
+              <div class="welcome-line copy">Lil Uzi Vert feature drops with time-based stock and offer visibility.</div>
+              <div class="welcome-line copy">Enter after the sequence or let it continue automatically.</div>
             </div>
-            <div class="hero-note reveal delay-4">
-              Free shipping is available across India. Remote areas are currently not available for delivery. Cash on delivery is not supported.
+            <div class="button-row">
+              <button class="primary-button" type="button" data-enter-site>Enter Site</button>
             </div>
           </div>
-
-          <div class="hero-visual reveal delay-2">
-            <div class="orbital-grid"></div>
-            <div class="product-stage" data-tilt-card>
-              <div class="scene-ring one"></div>
-              <div class="scene-ring two"></div>
-              <div class="glass-panel one"></div>
-              <div class="glass-panel two"></div>
-              <div class="scene-card">
-                <strong>Feature Ready</strong>
-                <h3>Drip Drop</h3>
-                <p>Premium products, multiple pages, auth, cart, payment, and theme control in one polished system.</p>
+          <div class="welcome-visual">
+            <div class="scene" data-tilt-card>
+              <div class="scene-grid"></div>
+              <div class="plate one"></div>
+              <div class="plate two"></div>
+              <div class="scene-panel">
+                <strong class="mini-label">Welcome</strong>
+                <h3>Black Edition</h3>
+                <p class="copy">Soft glow, deep blacks, bright text, and premium motion inspired by product-first landing experiences.</p>
               </div>
-              <div class="floating-pill one">Apple-inspired UI</div>
-              <div class="floating-pill two">Login before cart</div>
-              <div class="floating-pill three">India shipping</div>
+              <div class="scene-chip one">Luxury black</div>
+              <div class="scene-chip two">Guided entry</div>
+              <div class="scene-chip three">Ambient motion</div>
             </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="shipping-banner reveal">
-            <div>
-              <strong>Shipping policy</strong>
-              Free shipping all over India. Remote-area delivery is excluded for now.
-            </div>
-            <div>
-              <strong>Payment policy</strong>
-              Card and UPI only. No cash on delivery.
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="section-heading reveal">
-            <p class="eyebrow">Dedicated Pages</p>
-            <h2>Every major action opens its own world.</h2>
-          </div>
-          <div class="destination-grid">
-            <a class="glass-card route-card reveal" href="explore-experience.html">
-              <p class="mini-label">01</p>
-              <h3>Explore Experience</h3>
-              <p>See the cinematic design direction, interface story, and ambient 3D-inspired visuals in a dedicated page.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-1" href="foundation.html">
-              <p class="mini-label">02</p>
-              <h3>View Foundation</h3>
-              <p>Read the product system, app structure, auth flow, payment model, and engineering direction.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-2" href="drops.html">
-              <p class="mini-label">03</p>
-              <h3>Drops</h3>
-              <p>Shop six clothing categories from t-shirt to handkerchiefs, then continue into sneakers.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal" href="sneakers.html">
-              <p class="mini-label">04</p>
-              <h3>Sneakers</h3>
-              <p>Browse the sneaker line on a dedicated page with product cards, prices, and cart actions.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-1" href="new-arrivals.html">
-              <p class="mini-label">05</p>
-              <h3>New Arrivals</h3>
-              <p>Open the arrival grid to browse fresh products with add-to-cart behavior and pricing.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-2" href="build-your-dreams.html">
-              <p class="mini-label">06</p>
-              <h3>Build Your Dreams</h3>
-              <p>Feature premium sunglasses and aspirational styling in a separate destination.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal" href="featuring-lil-uzi-vert.html">
-              <p class="mini-label">07</p>
-              <h3>Featuring Lil Uzi Vert</h3>
-              <p>Artist-led campaign page with culture-forward product storytelling and exclusive drops.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-1" href="contact.html">
-              <p class="mini-label">08</p>
-              <h3>Contact Us</h3>
-              <p>People can reach out using email or phone and send an ask directly from a premium form page.</p>
-              <span class="route-link">Open page</span>
-            </a>
-            <a class="glass-card route-card reveal delay-2" href="cart.html">
-              <p class="mini-label">09</p>
-              <h3>Cart and Checkout</h3>
-              <p>See item price, total cart price, then continue to card or UPI payment after login.</p>
-              <span class="route-link">Open page</span>
-            </a>
-          </div>
-        </section>
-
-        <section>
-          <div class="section-heading reveal">
-            <p class="eyebrow">Playful Theme Switch</p>
-            <h2>Change the whole site mood with one switch.</h2>
-          </div>
-          <div class="theme-card-grid">
-            <article class="theme-card reveal">
-              <div class="swatch cloud"></div>
-              <h3>Cloud</h3>
-              <p>Soft bright glass surfaces with clean light gradients and airy Apple-style clarity.</p>
-            </article>
-            <article class="theme-card reveal delay-1">
-              <div class="swatch obsidian"></div>
-              <h3>Obsidian</h3>
-              <p>Dark premium mode with floating chrome tones for campaign-heavy moments and high contrast.</p>
-            </article>
-            <article class="theme-card reveal delay-2">
-              <div class="swatch sunset"></div>
-              <h3>Sunset</h3>
-              <p>Warmer fashion-editorial color balance that gives the whole site a softer luxury direction.</p>
-            </article>
           </div>
         </section>
       </main>
-
-      <footer class="footer-shell">
-        <div class="footer-panel">
-          <span>SCOTT CART concept build. Premium fashion, cart, auth, and checkout foundation.</span>
-          <span>Free shipping across India except remote areas.</span>
-        </div>
+      <footer class="site-footer">
+        <div class="copyright">Debargha-2026. All rights reserved</div>
       </footer>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

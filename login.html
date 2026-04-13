@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In / Sign Up | SCOTT CART</title>
-    <meta name="description" content="Cool ambient sign in and sign up page for SCOTT CART with style preferences and a skip-for-now option." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,64 +14,63 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
-        </div>
-        <nav class="site-nav">
-          <a class="is-active" href="login.html">Log In / Sign Up</a>
-          <a href="cart.html">Cart</a>
-          <a href="payment.html">Payment</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Account entry</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+          </div>
         </div>
       </header>
-      <main class="auth-layout">
-        <div class="auth-copy reveal">
-          <p class="eyebrow">Log In / Sign Up</p>
-          <h1>Enter the shop with a cool ambient gate.</h1>
-          <p class="hero-description">The sign-in route uses a softer luxury layout with a playful drip shape, audience selection, and a skip-for-now option at the bottom for first-time visitors.</p>
-          <ul class="auth-benefits auth-note">
-            <li>Add to cart and checkout require login or sign up.</li>
-            <li>You can choose Men, Woman, Kids, or any combination.</li>
-            <li>Skipping is allowed at first, but cart and payment still ask you to sign in later.</li>
-          </ul>
-        </div>
-        <div class="auth-visual reveal delay-1">
-          <div class="auth-stage" data-tilt-card>
-            <div class="drip-shape"></div>
-            <div class="auth-floating">
-              <div class="floating-pill">Cool ambient entry</div>
-              <div class="floating-pill">Drip-inspired form</div>
-              <div class="floating-pill">Audience preferences</div>
+      <main class="page-main">
+        <section class="split-layout">
+          <div>
+            <p class="eyebrow reveal">Log In / Sign Up</p>
+            <h1 class="section-title reveal delay-1">Dark ambient entry with stricter profile rules.</h1>
+            <p class="copy reveal delay-2">Gender is mandatory. Phone must be an India number starting with +91. Email stays optional.</p>
+            <div class="hero-note reveal delay-3">
+              You can still skip for now, but buying and adding to cart later will ask for a valid profile and terms acceptance.
             </div>
           </div>
-        </div>
-        <div class="auth-panel reveal delay-2">
-          <form class="form-grid" data-auth-form>
-            <input class="input-field" type="text" name="name" placeholder="Full name" />
-            <input class="input-field" type="email" name="email" placeholder="Email address" />
-            <input class="input-field" type="tel" name="phone" placeholder="Phone number" />
-            <input class="input-field" type="password" name="password" placeholder="Password" />
-            <div>
-              <p class="mini-label">Choose your preferred collections</p>
-              <div class="choice-grid">
-                <label class="choice-chip"><input type="checkbox" name="audience" value="Men" /> Men</label>
-                <label class="choice-chip"><input type="checkbox" name="audience" value="Woman" /> Woman</label>
-                <label class="choice-chip"><input type="checkbox" name="audience" value="Kids" /> Kids</label>
+          <div class="hero-visual reveal delay-2">
+            <div class="scene" data-tilt-card>
+              <div class="scene-grid"></div>
+              <div class="plate one"></div>
+              <div class="plate two"></div>
+              <div class="scene-panel">
+                <strong class="mini-label">Entry Stage</strong>
+                <h3>Glow Gate</h3>
+                <p class="copy">A darker sign-in surface with the more premium, product-first style you asked for.</p>
               </div>
             </div>
-            <div class="button-row">
-              <button class="primary-button" type="submit">Continue</button>
-              <a class="secondary-button" href="cart.html">Go To Cart</a>
-            </div>
-          </form>
-          <div class="button-row" style="margin-top: 18px;">
-            <button class="ghost-button" type="button" data-skip-login>Skip for now</button>
           </div>
-        </div>
+        </section>
+
+        <section style="padding-top: 0;">
+          <div class="form-card reveal" style="max-width: 760px; margin: 0 auto;">
+            <h3>Create or continue your profile</h3>
+            <form class="form-grid" data-login-form>
+              <input class="input-field" type="text" name="name" placeholder="Username" />
+              <input class="input-field" type="email" name="email" placeholder="Email address (optional)" />
+              <input class="input-field" type="tel" name="phone" placeholder="+911234567890" />
+              <select class="select-field" name="gender">
+                <option value="">Select gender</option>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Kids">Kids</option>
+              </select>
+              <input class="input-field" type="password" name="password" placeholder="Password" />
+              <div class="button-row">
+                <button class="primary-button" type="submit">Continue</button>
+                <button class="ghost-button" type="button" data-skip-login>Skip for now</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </main>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>

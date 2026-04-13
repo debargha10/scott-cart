@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment | SCOTT CART</title>
-    <meta name="description" content="Payment page for SCOTT CART with card payment and UPI request flow." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,59 +14,63 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Payment</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>Log In / Sign Up</a>
+          </div>
         </div>
-        <nav class="site-nav">
-          <a href="cart.html">Cart</a>
-          <a class="is-active" href="payment.html">Payment</a>
-          <a href="locations.html">Locations</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-tools">
+          <nav class="site-nav">
+            <a href="home.html">Home</a>
+            <a href="cart.html">Cart</a>
+            <a class="is-active" href="payment.html">Payment</a>
+            <a href="profile.html">My Profile</a>
+          </nav>
         </div>
       </header>
-      <main>
+      <main class="page-main">
         <section class="payment-layout">
-          <div class="contact-card reveal">
+          <div class="form-card reveal">
             <p class="eyebrow">Payment</p>
-            <h2>Card or UPI only.</h2>
-            <p class="section-copy">Cash on delivery is not available. For UPI, users can add their UPI ID and the site sends a payment request message.</p>
+            <h3>Card payment or UPI request only</h3>
+            <p class="copy">No cash on delivery. If location is missing, payment will ask you to add one first.</p>
             <div class="method-tabs">
               <button class="tab-button is-active" type="button" data-method-tab data-method="card">Card Payment</button>
               <button class="tab-button" type="button" data-method-tab data-method="upi">UPI Payment</button>
             </div>
-            <form class="form-grid" data-payment-form data-selected-method="card">
+            <form class="form-grid" data-payment-form data-method="card">
               <div data-payment-panel="card">
-                <input class="input-field" type="text" name="cardName" placeholder="Debargha Adhikary" />
-                <input class="input-field" type="text" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" />
-                <div class="summary-grid">
+                <input class="input-field" type="text" name="cardName" placeholder="Name on card" />
+                <input class="input-field" type="text" name="cardNumber" placeholder="Card number" />
+                <div class="grid-2">
                   <input class="input-field" type="text" name="expiry" placeholder="Expiry" />
                   <input class="input-field" type="text" name="cvv" placeholder="CVV" />
                 </div>
               </div>
               <div class="hidden" data-payment-panel="upi">
-                <input class="input-field" type="text" name="upi" placeholder="debargha@upi" />
-                <p class="form-hint">Enter your UPI ID and we send a payment request for the full amount.</p>
+                <input class="input-field" type="text" name="upi" placeholder="yourid@upi" />
+                <p class="copy">We will send a payment request to your UPI ID.</p>
               </div>
               <button class="primary-button" type="submit">Pay Now</button>
             </form>
           </div>
           <div class="summary-card reveal delay-1">
-            <h3>Payment summary</h3>
-            <div class="summary-line"><span>Total due</span><strong data-payment-total>₹0</strong></div>
+            <h3>Checkout notes</h3>
+            <div class="summary-line"><span>Total Due</span><strong data-payment-total>₹0</strong></div>
             <ul class="policy-list">
-              <li>Free shipping all over India except remote areas.</li>
-              <li>Home and work delivery addresses can be managed in saved locations.</li>
-              <li>Card and UPI only. Cash on delivery is disabled.</li>
+              <li>Location is mandatory before payment.</li>
+              <li>Free shipping across India except remote areas.</li>
+              <li>Card and UPI only.</li>
             </ul>
           </div>
         </section>
       </main>
-      <footer class="footer-shell"><div class="footer-panel"><span>Payment page now supports card and UPI flow.</span><span>UPI sends a request message in this prototype.</span></div></footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>

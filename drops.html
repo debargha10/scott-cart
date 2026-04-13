@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drops | SCOTT CART</title>
-    <meta name="description" content="Shop drops on SCOTT CART across six clothing choices and continue into the sneakers section." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,137 +14,60 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Drops</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>Log In / Sign Up</a>
+            <a class="utility-link" href="cart.html">Cart <span data-cart-count>0</span></a>
+          </div>
         </div>
-        <nav class="site-nav">
-          <a class="is-active" href="drops.html">Drops</a>
-          <a href="sneakers.html">Sneakers</a>
-          <a href="new-arrivals.html">New Arrivals</a>
-          <a href="signature-collections.html">Signature</a>
-          <a href="build-your-dreams.html">Build Dreams</a>
-          <a href="featuring-lil-uzi-vert.html">Lil Uzi Vert</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-tools">
+          <nav class="site-nav">
+            <a href="home.html">Home</a>
+            <a class="is-active" href="drops.html">Drops</a>
+            <a href="sneakers.html">Sneakers</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a href="featuring-lil-uzi-vert.html">Featuring Lil Uzi Vert</a>
+          </nav>
         </div>
       </header>
 
-      <main>
-        <section class="subpage-hero">
-          <div class="subpage-copy reveal">
+      <main class="page-main">
+        <section>
+          <div class="section-header reveal">
             <p class="eyebrow">Drops</p>
-            <h1>Six clothing choices for the first drop.</h1>
-            <p>
-              Users can start with six product types in the drop flow and then
-              move into the dedicated sneakers section for footwear-led shopping.
-            </p>
-            <div class="category-row">
-              <a class="pill-button" href="#tees">T-shirt</a>
-              <a class="pill-button" href="#hoodies">Hoodies</a>
-              <a class="pill-button" href="#sweatshirts">Sweat-Shirt</a>
-              <a class="pill-button" href="#jeans">Jeans</a>
-              <a class="pill-button" href="#trackpants">Track Pant</a>
-              <a class="pill-button" href="#handkerchiefs">Handkerchiefs</a>
-              <a class="pill-button" href="sneakers.html">Sneakers</a>
-            </div>
+            <h1 class="section-title">Six clothing choices start the drop floor.</h1>
+            <p class="section-copy">T-shirt, Hoodies, Sweat-Shirt, Jeans, Track Pant, and Handkerchiefs all route into their own dedicated product pages.</p>
           </div>
-          <div class="subpage-panel reveal delay-1">
-            <div class="stat-row">
-              <div class="stat-item">
-                <strong>Shopping rule</strong>
-                Login or sign up is required before adding anything to cart.
-              </div>
-              <div class="stat-item">
-                <strong>Shipping</strong>
-                Free delivery across India except remote areas.
-              </div>
-            </div>
+          <div class="product-grid">
+            <article class="product-card reveal"><a href="product.html?product=static-drip-tee"><div class="product-visual"></div></a><p class="mini-label">T-shirt</p><h3>Static Drip Tee</h3><p class="copy">Heavyweight cotton with a clean oversized silhouette.</p><div class="price-row"><span class="price-tag">₹1,899</span><a class="product-link" href="product.html?product=static-drip-tee">View Product</a></div></article>
+            <article class="product-card reveal delay-1"><a href="product.html?product=midnight-pulse-hoodie"><div class="product-visual"></div></a><p class="mini-label">Hoodies</p><h3>Midnight Pulse Hoodie</h3><p class="copy">Reflective accents with brushed comfort inside.</p><div class="price-row"><span class="price-tag">₹3,499</span><a class="product-link" href="product.html?product=midnight-pulse-hoodie">View Product</a></div></article>
+            <article class="product-card reveal delay-2"><a href="product.html?product=cloudline-sweatshirt"><div class="product-visual"></div></a><p class="mini-label">Sweat-Shirt</p><h3>Cloudline Sweatshirt</h3><p class="copy">Soft fleece and a polished fit for monochrome styling.</p><div class="price-row"><span class="price-tag">₹2,799</span><a class="product-link" href="product.html?product=cloudline-sweatshirt">View Product</a></div></article>
+            <article class="product-card reveal"><a href="product.html?product=blue-shift-denim"><div class="product-visual"></div></a><p class="mini-label">Jeans</p><h3>Blue Shift Denim</h3><p class="copy">Dark-wash denim with a sharper cut and subtle seam work.</p><div class="price-row"><span class="price-tag">₹3,999</span><a class="product-link" href="product.html?product=blue-shift-denim">View Product</a></div></article>
+            <article class="product-card reveal delay-1"><a href="product.html?product=vector-track-pant"><div class="product-visual"></div></a><p class="mini-label">Track Pant</p><h3>Vector Track Pant</h3><p class="copy">Relaxed technical fit built for everyday movement.</p><div class="price-row"><span class="price-tag">₹2,499</span><a class="product-link" href="product.html?product=vector-track-pant">View Product</a></div></article>
+            <article class="product-card reveal delay-2"><a href="product.html?product=silk-mark-band"><div class="product-visual"></div></a><p class="mini-label">Handkerchief</p><h3>Silk Mark Handkerchief</h3><p class="copy">A small but premium detail piece for styling layers.</p><div class="price-row"><span class="price-tag">₹599</span><a class="product-link" href="product.html?product=silk-mark-band">View Product</a></div></article>
           </div>
-        </section>
-
-        <section class="product-grid">
-          <article class="product-card reveal" id="tees">
-            <div class="product-visual"></div>
-            <p class="mini-label">T-shirt</p>
-            <h3>Static Drip Tee</h3>
-            <p class="product-meta">Premium heavyweight cotton with chrome logo placement.</p>
-            <div class="price-row">
-              <span class="price-tag">₹1,899</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Static Drip Tee" data-price="1899" data-category="T-shirt">Add to Cart</button>
-            </div>
-          </article>
-          <article class="product-card reveal delay-1" id="hoodies">
-            <div class="product-visual"></div>
-            <p class="mini-label">Hoodies</p>
-            <h3>Midnight Pulse Hoodie</h3>
-            <p class="product-meta">Oversized fit, brushed lining, and reflective drawcord finish.</p>
-            <div class="price-row">
-              <span class="price-tag">₹3,499</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Midnight Pulse Hoodie" data-price="3499" data-category="Hoodie">Add to Cart</button>
-            </div>
-          </article>
-          <article class="product-card reveal delay-2" id="sweatshirts">
-            <div class="product-visual"></div>
-            <p class="mini-label">Sweat-Shirt</p>
-            <h3>Cloudline Sweatshirt</h3>
-            <p class="product-meta">Soft fleece body with elevated rib trims and tonal SC branding.</p>
-            <div class="price-row">
-              <span class="price-tag">₹2,799</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Cloudline Sweatshirt" data-price="2799" data-category="Sweat-Shirt">Add to Cart</button>
-            </div>
-          </article>
-          <article class="product-card reveal" id="jeans">
-            <div class="product-visual"></div>
-            <p class="mini-label">Jeans</p>
-            <h3>Blue Shift Denim</h3>
-            <p class="product-meta">Structured denim silhouette with articulated seam detailing.</p>
-            <div class="price-row">
-              <span class="price-tag">₹3,999</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Blue Shift Denim" data-price="3999" data-category="Jeans">Add to Cart</button>
-            </div>
-          </article>
-          <article class="product-card reveal delay-1" id="trackpants">
-            <div class="product-visual"></div>
-            <p class="mini-label">Track Pant</p>
-            <h3>Vector Track Pant</h3>
-            <p class="product-meta">Relaxed technical fit made for daily wear and modern styling.</p>
-            <div class="price-row">
-              <span class="price-tag">₹2,499</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Vector Track Pant" data-price="2499" data-category="Track Pant">Add to Cart</button>
-            </div>
-          </article>
-          <article class="product-card reveal delay-2" id="handkerchiefs">
-            <div class="product-visual"></div>
-            <p class="mini-label">Handkerchiefs</p>
-            <h3>Silk Mark Handkerchief</h3>
-            <p class="product-meta">Soft statement accessory with stitched edge and drop-print detail.</p>
-            <div class="price-row">
-              <span class="price-tag">₹599</span>
-              <button class="primary-button" type="button" data-add-to-cart data-name="Silk Mark Handkerchief" data-price="599" data-category="Handkerchief">Add to Cart</button>
-            </div>
-          </article>
         </section>
 
         <section>
-          <div class="policy-strip reveal">
-            <div>
-              <strong>Sneakers section</strong>
-              Continue into a dedicated footwear page for sneaker-led drops.
+          <div class="hero-note reveal">
+            <div class="price-row">
+              <div>
+                <strong>Sneakers have their own section now</strong>
+                <p class="copy">Open the sneaker page to continue the product route.</p>
+              </div>
+              <a class="primary-button" href="sneakers.html">Open Sneakers</a>
             </div>
-            <a class="primary-button" href="sneakers.html">Open Sneakers</a>
           </div>
         </section>
       </main>
 
-      <footer class="footer-shell">
-        <div class="footer-panel">
-          <span>No cash on delivery.</span>
-          <span>Card and UPI checkout available on the payment page.</span>
-        </div>
+      <footer class="site-footer">
+        <div class="copyright">Debargha-2026. All rights reserved</div>
       </footer>
     </div>
     <script src="script.js"></script>

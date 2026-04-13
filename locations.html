@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locations | SCOTT CART</title>
-    <meta name="description" content="Save multiple locations on SCOTT CART with unique labels and distinct home/work addresses." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,42 +14,46 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
-        </div>
-        <nav class="site-nav">
-          <a href="cart.html">Cart</a>
-          <a href="payment.html">Payment</a>
-          <a class="is-active" href="locations.html">Locations</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Saved locations</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>My Profile</a>
+          </div>
         </div>
       </header>
-      <main>
+      <main class="page-main">
         <section class="locations-layout">
-          <div class="contact-card reveal">
-            <p class="eyebrow">Saved Locations</p>
-            <h2>Store multiple delivery locations with unique names.</h2>
-            <p class="section-copy">Home and work should not be the same address. Labels also stay unique so users can distinguish locations clearly.</p>
+          <div class="form-card reveal">
+            <p class="eyebrow">Locations</p>
+            <h3>Location is mandatory before checkout</h3>
             <form class="form-grid" data-location-form>
-              <input class="input-field" type="text" name="label" placeholder="Location name like Home, Work, Studio" />
+              <input class="input-field" type="text" name="label" placeholder="Location label like Home or Work" />
               <select class="select-field" name="type">
-                <option value="home">Home</option>
-                <option value="work">Work</option>
-                <option value="other">Other</option>
+                <option value="Home">Home</option>
+                <option value="Work">Work</option>
+                <option value="Other">Other</option>
               </select>
-              <textarea class="textarea-field" name="address" placeholder="Full address"></textarea>
+              <div class="button-row">
+                <input class="input-field" type="text" name="mapLocation" placeholder="Map location preview" />
+                <button class="icon-button" type="button" data-map-detect>📍</button>
+              </div>
+              <input class="input-field" type="text" name="houseNumber" placeholder="House number" />
+              <textarea class="textarea-field" name="fullAddress" placeholder="Full address"></textarea>
+              <div class="grid-2">
+                <input class="input-field" type="text" name="state" placeholder="State" />
+                <input class="input-field" type="text" name="pincode" placeholder="Pincode" />
+              </div>
               <button class="primary-button" type="submit">Save Location</button>
             </form>
           </div>
-          <div class="location-list" data-location-list></div>
+          <div class="grid-2" data-location-list style="grid-template-columns: 1fr;"></div>
         </section>
       </main>
-      <footer class="footer-shell"><div class="footer-panel"><span>Multiple locations supported.</span><span>Home and work must remain different addresses.</span></div></footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>

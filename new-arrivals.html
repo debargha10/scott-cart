@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Arrivals | SCOTT CART</title>
-    <meta name="description" content="Browse new arrivals on SCOTT CART with pricing and cart-ready product cards." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,92 +14,44 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>New Arrivals</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>Log In / Sign Up</a>
+            <a class="utility-link" href="cart.html">Cart <span data-cart-count>0</span></a>
+          </div>
         </div>
-        <nav class="site-nav">
-          <a href="drops.html">Drops</a>
-          <a href="sneakers.html">Sneakers</a>
-          <a class="is-active" href="new-arrivals.html">New Arrivals</a>
-          <a href="signature-collections.html">Signature</a>
-          <a href="build-your-dreams.html">Build Dreams</a>
-          <a href="featuring-lil-uzi-vert.html">Lil Uzi Vert</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-tools">
+          <nav class="site-nav">
+            <a href="home.html">Home</a>
+            <a href="drops.html">Drops</a>
+            <a href="sneakers.html">Sneakers</a>
+            <a class="is-active" href="new-arrivals.html">New Arrivals</a>
+            <a href="featuring-lil-uzi-vert.html">Featuring Lil Uzi Vert</a>
+          </nav>
         </div>
       </header>
-
-      <main>
-        <section class="subpage-hero">
-          <div class="subpage-copy reveal">
+      <main class="page-main">
+        <section>
+          <div class="section-header reveal">
             <p class="eyebrow">New Arrivals</p>
-            <h1>Fresh product cards with direct cart flow.</h1>
-            <p>Every product shows its own price, and the cart later calculates the total price across all selected items.</p>
+            <h1 class="section-title">Fresh items with a proper product-page route.</h1>
           </div>
-          <div class="subpage-panel reveal delay-1">
-            <div class="stat-row">
-              <div class="stat-item"><strong>Flow</strong>Browse, add to cart, sign in if needed, and continue to checkout.</div>
-              <div class="stat-item"><strong>Delivery</strong>Free shipping across India except remote areas.</div>
-            </div>
+          <div class="product-grid">
+            <article class="product-card reveal"><a href="product.html?product=obsidian-runner"><div class="product-visual"></div></a><p class="mini-label">Arrival 01</p><h3>Obsidian Runner</h3><p class="copy">Reflective black sneaker concept.</p><div class="price-row"><span class="price-tag">₹6,800</span><a class="product-link" href="product.html?product=obsidian-runner">View Product</a></div></article>
+            <article class="product-card reveal delay-1"><a href="product.html?product=nova-carrier"><div class="product-visual"></div></a><p class="mini-label">Arrival 02</p><h3>Nova Carrier</h3><p class="copy">Minimal premium bag with sculpted shell.</p><div class="price-row"><span class="price-tag">₹4,200</span><a class="product-link" href="product.html?product=nova-carrier">View Product</a></div></article>
+            <article class="product-card reveal delay-2"><a href="product.html?product=static-layer-jacket"><div class="product-visual"></div></a><p class="mini-label">Arrival 03</p><h3>Static Layer Jacket</h3><p class="copy">Editorial outerwear with metallic trim.</p><div class="price-row"><span class="price-tag">₹5,100</span><a class="product-link" href="product.html?product=static-layer-jacket">View Product</a></div></article>
+            <article class="product-card reveal"><a href="product.html?product=solar-echo"><div class="product-visual"></div></a><p class="mini-label">Arrival 04</p><h3>Solar Echo</h3><p class="copy">Warm-toned sneaker concept with soft suede cues.</p><div class="price-row"><span class="price-tag">₹6,200</span><a class="product-link" href="product.html?product=solar-echo">View Product</a></div></article>
+            <article class="product-card reveal delay-1"><a href="product.html?product=glassline-tee"><div class="product-visual"></div></a><p class="mini-label">Arrival 05</p><h3>Glassline Tee</h3><p class="copy">Quiet standout premium tee.</p><div class="price-row"><span class="price-tag">₹1,650</span><a class="product-link" href="product.html?product=glassline-tee">View Product</a></div></article>
+            <article class="product-card reveal delay-2"><a href="product.html?product=halo-frame"><div class="product-visual"></div></a><p class="mini-label">Arrival 06</p><h3>Halo Frame</h3><p class="copy">Sunglasses preview from Build Your Dreams.</p><div class="price-row"><span class="price-tag">₹3,800</span><a class="product-link" href="product.html?product=halo-frame">View Product</a></div></article>
           </div>
-        </section>
-
-        <section class="product-grid">
-          <article class="product-card reveal">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 01</p>
-            <h3>Obsidian Runner</h3>
-            <p class="product-meta">Sharp sole geometry, reflective detailing, and a deep black finish.</p>
-            <div class="price-row"><span class="price-tag">₹6,800</span><button class="primary-button" type="button" data-add-to-cart data-name="Obsidian Runner" data-price="6800" data-category="New Arrival">Add to Cart</button></div>
-          </article>
-          <article class="product-card reveal delay-1">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 02</p>
-            <h3>Nova Carrier</h3>
-            <p class="product-meta">Minimal premium bag with a sculpted shell and soft luxury finish.</p>
-            <div class="price-row"><span class="price-tag">₹4,200</span><button class="primary-button" type="button" data-add-to-cart data-name="Nova Carrier" data-price="4200" data-category="New Arrival">Add to Cart</button></div>
-          </article>
-          <article class="product-card reveal delay-2">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 03</p>
-            <h3>Static Layer Jacket</h3>
-            <p class="product-meta">Statement outerwear with metallic trim and editorial runway energy.</p>
-            <div class="price-row"><span class="price-tag">₹5,100</span><button class="primary-button" type="button" data-add-to-cart data-name="Static Layer Jacket" data-price="5100" data-category="New Arrival">Add to Cart</button></div>
-          </article>
-          <article class="product-card reveal">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 04</p>
-            <h3>Solar Echo</h3>
-            <p class="product-meta">Warm-toned sneaker concept mixing suede softness with angular form.</p>
-            <div class="price-row"><span class="price-tag">₹6,200</span><button class="primary-button" type="button" data-add-to-cart data-name="Solar Echo" data-price="6200" data-category="New Arrival">Add to Cart</button></div>
-          </article>
-          <article class="product-card reveal delay-1">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 05</p>
-            <h3>Glassline Tee</h3>
-            <p class="product-meta">Lightweight premium tee designed for quiet standout layering.</p>
-            <div class="price-row"><span class="price-tag">₹1,650</span><button class="primary-button" type="button" data-add-to-cart data-name="Glassline Tee" data-price="1650" data-category="New Arrival">Add to Cart</button></div>
-          </article>
-          <article class="product-card reveal delay-2">
-            <div class="product-visual"></div>
-            <p class="mini-label">Arrival 06</p>
-            <h3>Halo Shade</h3>
-            <p class="product-meta">A new sunglasses arrival previewing the Build Your Dreams collection.</p>
-            <div class="price-row"><span class="price-tag">₹3,300</span><button class="primary-button" type="button" data-add-to-cart data-name="Halo Shade" data-price="3300" data-category="New Arrival">Add to Cart</button></div>
-          </article>
         </section>
       </main>
-
-      <footer class="footer-shell">
-        <div class="footer-panel">
-          <span>Login is required before an item enters the cart.</span>
-          <span>UPI and card payment supported.</span>
-        </div>
-      </footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>

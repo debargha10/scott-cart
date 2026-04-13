@@ -1,27 +1,213 @@
-const revealItems = document.querySelectorAll(".reveal");
-const tiltCards = document.querySelectorAll("[data-tilt-card]");
+const tiltTargets = document.querySelectorAll("[data-tilt-card]");
 const themeButtons = document.querySelectorAll("[data-theme-toggle]");
-const authButtons = document.querySelectorAll("[data-auth-button]");
 const cartCountNodes = document.querySelectorAll("[data-cart-count]");
-const methodTabs = document.querySelectorAll("[data-method-tab]");
-const paymentPanels = document.querySelectorAll("[data-payment-panel]");
+const authButtons = document.querySelectorAll("[data-auth-button]");
 
 const THEME_KEY = "scottcart-theme";
 const AUTH_KEY = "scottcart-auth";
 const CART_KEY = "scottcart-cart";
-const PENDING_ITEM_KEY = "scottcart-pending-item";
 const LOCATIONS_KEY = "scottcart-locations";
+const PENDING_PRODUCT_KEY = "scottcart-pending-product";
 
-const themes = ["cloud", "obsidian", "sunset"];
+const themes = ["default", "obsidian", "sunset", "black-drip"];
 const themeLabels = {
-  cloud: "Cloud",
+  default: "Noir",
   obsidian: "Obsidian",
   sunset: "Sunset",
+  "black-drip": "Black Drip",
 };
 
-const getCurrentReturnPath = () => {
-  const fileName = window.location.pathname.split("/").pop() || "index.html";
-  return `${fileName}${window.location.search}`;
+const PRODUCT_CATALOG = {
+  "static-drip-tee": {
+    name: "Static Drip Tee",
+    category: "T-shirt",
+    price: 1899,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "A heavyweight Lil-noir inspired street tee with sharp typography, premium cotton, and a clean oversized silhouette.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Fabric Detail", "Fit Preview"],
+  },
+  "midnight-pulse-hoodie": {
+    name: "Midnight Pulse Hoodie",
+    category: "Hoodie",
+    price: 3499,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Oversized premium hoodie with reflective accents and a deep monochrome finish designed for layered styling.",
+    angles: ["Front Angle", "Right Side", "Back Angle", "Pocket Detail", "Fit Preview"],
+  },
+  "cloudline-sweatshirt": {
+    name: "Cloudline Sweatshirt",
+    category: "Sweat-Shirt",
+    price: 2799,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "A minimal premium sweatshirt balancing soft fleece comfort with a polished fashion-forward cut.",
+    angles: ["Front Angle", "Left Side", "Back Angle", "Collar Detail", "Fit Preview"],
+  },
+  "blue-shift-denim": {
+    name: "Blue Shift Denim",
+    category: "Jeans",
+    price: 3999,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Structured denim with subtle seam articulation and a rich dark wash for elevated everyday wear.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Pocket Detail", "Fit Preview"],
+  },
+  "vector-track-pant": {
+    name: "Vector Track Pant",
+    category: "Track Pant",
+    price: 2499,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "A technical track pant designed for street styling with a relaxed profile and clean taper.",
+    angles: ["Front Angle", "Left Side", "Back Angle", "Waist Detail", "Fit Preview"],
+  },
+  "silk-mark-band": {
+    name: "Silk Mark Handkerchief",
+    category: "Handkerchief",
+    price: 599,
+    sizes: ["One Size"],
+    description: "A statement handkerchief with premium trim and a drop-print pattern built for styling detail.",
+    angles: ["Flat View", "Folded View", "Pattern Detail", "Trim Detail", "Style Preview"],
+  },
+  "prism-dash": {
+    name: "Prism Dash",
+    category: "Sneakers",
+    price: 7200,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "A sculpted sneaker with modern geometry, layered paneling, and a futuristic performance feel.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Sole View"],
+  },
+  "chrome-sprint": {
+    name: "Chrome Sprint",
+    category: "Sneakers",
+    price: 7800,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "Reflective hardware and a bold heel counter make this sneaker feel fast even at rest.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Top View"],
+  },
+  "fluid-rise": {
+    name: "Fluid Rise",
+    category: "Sneakers",
+    price: 6900,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "A lighter luxury runner with a clean profile, ready for all-day movement and styling.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Sole View"],
+  },
+  "volt-arc": {
+    name: "Volt Arc",
+    category: "Sneakers",
+    price: 8100,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "A high-energy statement sneaker with an exaggerated sole and a luminous design direction.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Top View"],
+  },
+  "obsidian-runner": {
+    name: "Obsidian Runner",
+    category: "Sneakers",
+    price: 6800,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "Deep black sneaker concept with reflective details and a sharp sole structure.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Sole View"],
+  },
+  "nova-carrier": {
+    name: "Nova Carrier",
+    category: "Bag",
+    price: 4200,
+    sizes: ["One Size"],
+    description: "Minimal premium bag with a sculpted shell and quiet luxury attitude.",
+    angles: ["Front Angle", "Left Side", "Back Angle", "Handle Detail", "Interior View"],
+  },
+  "static-layer-jacket": {
+    name: "Static Layer Jacket",
+    category: "Jacket",
+    price: 5100,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Editorial outerwear with metallic trim and a sharp urban silhouette.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Collar Detail", "Fit Preview"],
+  },
+  "solar-echo": {
+    name: "Solar Echo",
+    category: "Sneakers",
+    price: 6200,
+    sizes: ["6", "7", "8", "9", "10", "11"],
+    description: "Warm tonal sneaker concept merging soft suede cues with bold shape language.",
+    angles: ["Front Angle", "Outer Side", "Inner Side", "Back Heel", "Top View"],
+  },
+  "glassline-tee": {
+    name: "Glassline Tee",
+    category: "T-shirt",
+    price: 1650,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Quiet standout tee designed for cleaner monochrome layering and premium comfort.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Fabric Detail", "Fit Preview"],
+  },
+  "halo-frame": {
+    name: "Halo Frame",
+    category: "Sunglasses",
+    price: 3800,
+    sizes: ["One Size"],
+    description: "Glossy rounded sunglasses with a premium finish and a fashion-led profile.",
+    angles: ["Front View", "Left Side", "Right Side", "Frame Detail", "Lifestyle Preview"],
+  },
+  "mirror-drift": {
+    name: "Mirror Drift",
+    category: "Sunglasses",
+    price: 4100,
+    sizes: ["One Size"],
+    description: "Reflective lens sunglasses with a bolder silhouette built for statement styling.",
+    angles: ["Front View", "Left Side", "Right Side", "Lens Detail", "Lifestyle Preview"],
+  },
+  "solar-tint": {
+    name: "Solar Tint",
+    category: "Sunglasses",
+    price: 3950,
+    sizes: ["One Size"],
+    description: "Warm lens eyewear designed for softer luxury mood and elevated daily wear.",
+    angles: ["Front View", "Left Side", "Right Side", "Frame Detail", "Lifestyle Preview"],
+  },
+  "uzi-vector-tee": {
+    name: "Uzi Vector Tee",
+    category: "T-shirt",
+    price: 2600,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Lil Uzi Vert inspired tee with electric contrast graphics and performance-culture edge.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Graphic Detail", "Fit Preview"],
+    offerEnds: "2026-05-01",
+    stock: 18,
+  },
+  "uzi-neon-tee": {
+    name: "Uzi Neon Tee",
+    category: "T-shirt",
+    price: 2800,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "A louder collaboration tee reflecting stage energy, chrome tones, and nightlife styling.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Graphic Detail", "Fit Preview"],
+    offerEnds: "2026-05-01",
+    stock: 8,
+  },
+  "uzi-stage-track": {
+    name: "Uzi Stage Track Pant",
+    category: "Track Pant",
+    price: 3600,
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    description: "Track pant rooted in artist-tour culture with sharp line work and a premium technical finish.",
+    angles: ["Front Angle", "Side Angle", "Back Angle", "Waist Detail", "Fit Preview"],
+    offerEnds: "2026-05-01",
+    stock: 3,
+  },
+  "uzi-limited-bandana": {
+    name: "Uzi Limited Bandana",
+    category: "Bandana",
+    price: 1200,
+    sizes: ["One Size"],
+    description: "Limited period bandana inspired by Lil Uzi Vert visuals, typography, and underground culture.",
+    angles: ["Flat View", "Folded View", "Pattern Detail", "Trim Detail", "Style Preview"],
+    offerEnds: "2026-04-20",
+    stock: 0,
+  },
+};
+
+const modelPhotos = {
+  Men: ["Look 01", "Look 02", "Look 03", "Look 04", "Look 05", "Look 06"],
+  Women: ["Edit 01", "Edit 02", "Edit 03", "Edit 04", "Edit 05", "Edit 06"],
+  Kids: ["Kids 01", "Kids 02", "Kids 03", "Kids 04", "Kids 05", "Kids 06"],
 };
 
 const formatCurrency = (value) =>
@@ -31,31 +217,16 @@ const formatCurrency = (value) =>
     maximumFractionDigits: 0,
   }).format(value);
 
-const getCart = () => {
-  try {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
-  } catch {
-    return [];
-  }
-};
+const getToday = () => new Date().toISOString().slice(0, 10);
 
-const saveCart = (cart) => {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
-  updateCartIndicators();
-};
+const getTheme = () => localStorage.getItem(THEME_KEY) || "default";
+const getAuth = () => JSON.parse(localStorage.getItem(AUTH_KEY) || "null");
+const getCart = () => JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+const getLocations = () => JSON.parse(localStorage.getItem(LOCATIONS_KEY) || "[]");
 
-const getAuth = () => {
-  try {
-    return JSON.parse(localStorage.getItem(AUTH_KEY));
-  } catch {
-    return null;
-  }
-};
-
-const setAuth = (payload) => {
-  localStorage.setItem(AUTH_KEY, JSON.stringify(payload));
-  updateAuthUI();
-};
+const setAuth = (value) => localStorage.setItem(AUTH_KEY, JSON.stringify(value));
+const setCart = (value) => localStorage.setItem(CART_KEY, JSON.stringify(value));
+const setLocations = (value) => localStorage.setItem(LOCATIONS_KEY, JSON.stringify(value));
 
 const showToast = (message) => {
   let toast = document.querySelector(".toast");
@@ -68,481 +239,648 @@ const showToast = (message) => {
 
   toast.textContent = message;
   toast.classList.add("is-visible");
-
-  window.clearTimeout(showToast.timeoutId);
-  showToast.timeoutId = window.setTimeout(() => {
-    toast.classList.remove("is-visible");
-  }, 2500);
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
 };
 
-const updateCartIndicators = () => {
-  const count = getCart().reduce((total, item) => total + item.quantity, 0);
-
+const updateCartCount = () => {
+  const total = getCart().reduce((sum, item) => sum + item.quantity, 0);
   cartCountNodes.forEach((node) => {
-    node.textContent = count;
+    node.textContent = total;
   });
 };
 
-const updateAuthUI = () => {
+const updateAuthLinks = () => {
   const auth = getAuth();
-
   authButtons.forEach((button) => {
     if (auth) {
-      button.textContent = auth.name ? `Hi, ${auth.name.split(" ")[0]}` : "Account";
-      button.setAttribute("href", "login.html");
+      button.textContent = "My Profile";
+      button.href = "profile.html";
     } else {
       button.textContent = "Log In / Sign Up";
-      button.setAttribute("href", "login.html");
+      button.href = "login.html";
     }
   });
 };
 
-const redirectToLogin = (pendingItem) => {
-  if (pendingItem) {
-    localStorage.setItem(PENDING_ITEM_KEY, JSON.stringify(pendingItem));
-  }
-
-  const currentUrl = getCurrentReturnPath();
-  window.location.href = `login.html?return=${encodeURIComponent(currentUrl)}`;
-};
-
-const addItemToCart = (item) => {
-  const cart = getCart();
-  const existingItem = cart.find((entry) => entry.name === item.name);
-
-  if (existingItem) {
-    existingItem.quantity += 1;
+const applyTheme = () => {
+  const theme = getTheme();
+  if (theme === "default") {
+    delete document.documentElement.dataset.theme;
   } else {
-    cart.push({ ...item, quantity: 1 });
+    document.documentElement.dataset.theme = theme;
   }
-
-  saveCart(cart);
-
-  const total = cart.reduce((sum, entry) => sum + entry.price * entry.quantity, 0);
-  showToast(`${item.name} added for ${formatCurrency(item.price)}. Cart total ${formatCurrency(total)}.`);
+  themeButtons.forEach((button) => {
+    const label = button.querySelector(".theme-label");
+    if (label) label.textContent = themeLabels[theme];
+  });
 };
 
-const handleAddToCartButtons = () => {
-  document.querySelectorAll("[data-add-to-cart]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
+const cycleTheme = () => {
+  const current = getTheme();
+  const next = themes[(themes.indexOf(current) + 1) % themes.length];
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme();
+  showToast(`Theme changed to ${themeLabels[next]}.`);
+};
 
-      const item = {
-        name: button.dataset.name,
-        price: Number(button.dataset.price),
-        category: button.dataset.category || "General",
-      };
+const setupTheme = () => {
+  applyTheme();
+  themeButtons.forEach((button) => {
+    button.addEventListener("click", cycleTheme);
+  });
+};
 
-      if (!getAuth()) {
-        redirectToLogin(item);
+const setupReveal = () => {
+  const items = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16 }
+  );
+
+  items.forEach((item) => observer.observe(item));
+};
+
+const setupTilt = () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  tiltTargets.forEach((card) => {
+    const move = (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      const rx = (0.5 - y) * 12;
+      const ry = (x - 0.5) * 12;
+      card.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    };
+    const reset = () => {
+      card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+    };
+    card.addEventListener("pointermove", move);
+    card.addEventListener("pointerleave", reset);
+  });
+};
+
+const phoneIsValid = (phone) => /^\+91\d{10}$/.test(phone.trim());
+
+const authMeetsCommerceRequirements = (auth) => Boolean(auth && auth.name && auth.gender && phoneIsValid(auth.phone || ""));
+
+const redirectToLogin = (slug, next = null) => {
+  if (slug) {
+    localStorage.setItem(PENDING_PRODUCT_KEY, slug);
+  }
+  const returnPath = next || `${window.location.pathname.split("/").pop() || "home.html"}${window.location.search}`;
+  window.location.href = `login.html?return=${encodeURIComponent(returnPath)}`;
+};
+
+const getOfferState = (product) => {
+  const expired = product.offerEnds ? getToday() > product.offerEnds : false;
+  const soldOut = typeof product.stock === "number" ? product.stock <= 0 : false;
+  if (expired) return { label: "Offer ended", unavailable: true };
+  if (soldOut) return { label: "Out of stock", unavailable: true };
+  if (product.offerEnds) return { label: `Offer until ${product.offerEnds}`, unavailable: false };
+  return { label: "Available now", unavailable: false };
+};
+
+const addItemToCart = (slug, size) => {
+  const product = PRODUCT_CATALOG[slug];
+  if (!product) return;
+
+  const cart = getCart();
+  const existing = cart.find((item) => item.slug === slug && item.size === size);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({
+      slug,
+      name: product.name,
+      price: product.price,
+      size,
+      quantity: 1,
+      category: product.category,
+    });
+  }
+
+  setCart(cart);
+  updateCartCount();
+};
+
+const renderProductPage = () => {
+  const container = document.querySelector("[data-product-page]");
+  if (!container) return;
+
+  const slug = new URLSearchParams(window.location.search).get("product");
+  const product = PRODUCT_CATALOG[slug];
+
+  if (!product) {
+    container.innerHTML = `<div class="summary-card"><h3>Product not found</h3><p class="copy">This product route does not exist yet.</p><a class="secondary-button" href="home.html">Back to home</a></div>`;
+    return;
+  }
+
+  const offer = getOfferState(product);
+  const sizeOptions = product.sizes
+    .map(
+      (size, index) => `
+        <label class="size-chip ${index === 0 ? "is-selected" : ""}">
+          <input ${index === 0 ? "checked" : ""} type="radio" name="size" value="${size}" />
+          <span>${size}</span>
+        </label>
+      `
+    )
+    .join("");
+
+  const angles = product.angles
+    .map(
+      (label) => `
+        <div class="card">
+          <div class="angle-tile"></div>
+          <p class="mini-label" style="margin-top: 14px;">${label}</p>
+        </div>
+      `
+    )
+    .join("");
+
+  container.innerHTML = `
+    <section class="product-layout">
+      <div>
+        <p class="eyebrow reveal">${product.category}</p>
+        <h1 class="product-title reveal delay-1">${product.name}</h1>
+        <p class="product-description reveal delay-2">${product.description}</p>
+        <div class="hero-note reveal delay-3">
+          <div class="product-action-row">
+            <span class="price-tag">${formatCurrency(product.price)}</span>
+            <span class="product-status ${offer.unavailable ? "is-danger" : ""}">${offer.label}</span>
+          </div>
+        </div>
+        <div class="form-card reveal delay-3" style="margin-top: 18px;">
+          <h3>Available size</h3>
+          <p class="meta-copy">${product.category === "T-shirt" ? "S means small, M means medium, L means large, XL means extra large, XXL means extra extra large." : "Select the correct size before continuing."}</p>
+          <div class="size-grid" style="margin: 16px 0 18px;">${sizeOptions}</div>
+          <label class="choice-chip" style="justify-content: flex-start;">
+            <input type="checkbox" data-terms-checkbox />
+            <span>I agree to the terms and conditions before continuing.</span>
+          </label>
+          <div class="button-row" style="margin-top: 18px;">
+            <button class="primary-button" type="button" data-product-action="cart" data-product-slug="${slug}" ${offer.unavailable ? "disabled" : ""}>Add to Cart</button>
+            <button class="secondary-button" type="button" data-product-action="buy" data-product-slug="${slug}" ${offer.unavailable ? "disabled" : ""}>BUY NOW</button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-panel reveal delay-2">
+        <div class="product-visual" style="height: 360px;"></div>
+        <div class="angles-grid" style="margin-top: 18px;">${angles}</div>
+      </div>
+    </section>
+  `;
+};
+
+const setupProductActions = () => {
+  document.body.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-product-action]");
+    if (!button) return;
+
+    const slug = button.dataset.productSlug;
+    const auth = getAuth();
+    const terms = document.querySelector("[data-terms-checkbox]");
+    const selectedSize = document.querySelector('input[name="size"]:checked');
+
+    if (!selectedSize) {
+      showToast("Please choose a size first.");
+      return;
+    }
+
+    if (!terms?.checked) {
+      showToast("Please agree to the terms and conditions first.");
+      return;
+    }
+
+    if (!authMeetsCommerceRequirements(auth)) {
+      redirectToLogin(slug);
+      return;
+    }
+
+    addItemToCart(slug, selectedSize.value);
+    showToast(`${PRODUCT_CATALOG[slug].name} added to cart.`);
+
+    if (button.dataset.productAction === "buy") {
+      if (!getLocations().length) {
+        showToast("Please save a delivery location before buying.");
+        window.setTimeout(() => {
+          window.location.href = "locations.html";
+        }, 700);
         return;
       }
+      window.location.href = "payment.html";
+    }
+  });
 
-      addItemToCart(item);
-    });
+  document.body.addEventListener("change", (event) => {
+    const chip = event.target.closest(".size-chip");
+    if (!chip) return;
+    document.querySelectorAll(".size-chip").forEach((node) => node.classList.remove("is-selected"));
+    chip.classList.add("is-selected");
   });
 };
 
 const renderCart = () => {
   const cartList = document.querySelector("[data-cart-list]");
-  const emptyState = document.querySelector("[data-cart-empty]");
-
-  if (!cartList) {
-    return;
-  }
+  if (!cartList) return;
 
   const cart = getCart();
   cartList.innerHTML = "";
 
+  const empty = document.querySelector("[data-cart-empty]");
   if (!cart.length) {
-    emptyState?.classList.remove("hidden");
+    empty?.classList.remove("hidden");
   } else {
-    emptyState?.classList.add("hidden");
-
-    cart.forEach((item, index) => {
-      const article = document.createElement("article");
-      article.className = "cart-item";
-      article.innerHTML = `
-        <div class="cart-thumb"></div>
-        <div>
-          <div class="cart-meta">
-            <strong>${item.name}</strong>
-            <span class="muted">${item.category}</span>
-          </div>
-          <p class="product-meta">Quantity ${item.quantity}</p>
-          <p class="product-meta">${formatCurrency(item.price)} each</p>
-        </div>
-        <div class="button-row">
-          <span class="price-tag">${formatCurrency(item.price * item.quantity)}</span>
-          <button class="ghost-button" type="button" data-remove-index="${index}">Remove</button>
-        </div>
-      `;
-      cartList.appendChild(article);
-    });
+    empty?.classList.add("hidden");
   }
+
+  cart.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <div class="price-row">
+        <div>
+          <h3>${item.name}</h3>
+          <p class="meta-copy">${item.category} / Size ${item.size} / Qty ${item.quantity}</p>
+        </div>
+        <span class="price-tag">${formatCurrency(item.price * item.quantity)}</span>
+      </div>
+      <div class="button-row">
+        <a class="product-link" href="product.html?product=${item.slug}">View Product</a>
+        <button class="ghost-button" type="button" data-remove-cart="${index}">Remove</button>
+      </div>
+    `;
+    cartList.appendChild(card);
+  });
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = cart.length ? 0 : 0;
-  const total = subtotal + shipping;
-
-  document.querySelectorAll("[data-cart-subtotal]").forEach((node) => {
-    node.textContent = formatCurrency(subtotal);
-  });
-
-  document.querySelectorAll("[data-cart-shipping]").forEach((node) => {
-    node.textContent = shipping === 0 ? "Free" : formatCurrency(shipping);
-  });
-
-  document.querySelectorAll("[data-cart-total]").forEach((node) => {
-    node.textContent = formatCurrency(total);
-  });
+  document.querySelectorAll("[data-cart-subtotal]").forEach((node) => (node.textContent = formatCurrency(subtotal)));
+  document.querySelectorAll("[data-cart-total]").forEach((node) => (node.textContent = formatCurrency(subtotal)));
 };
 
-const attachCartEvents = () => {
-  const cartList = document.querySelector("[data-cart-list]");
-
-  if (!cartList) {
-    return;
-  }
-
-  cartList.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-remove-index]");
-
-    if (!button) {
-      return;
-    }
+const setupCart = () => {
+  renderCart();
+  document.body.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove-cart]");
+    if (!button) return;
 
     const cart = getCart();
-    cart.splice(Number(button.dataset.removeIndex), 1);
-    saveCart(cart);
+    cart.splice(Number(button.dataset.removeCart), 1);
+    setCart(cart);
+    updateCartCount();
     renderCart();
   });
 };
 
-const setupTheme = () => {
-  const root = document.documentElement;
-  const savedTheme = localStorage.getItem(THEME_KEY) || "cloud";
-  root.dataset.theme = savedTheme;
+const setupPayment = () => {
+  const form = document.querySelector("[data-payment-form]");
+  if (!form) return;
 
-  themeButtons.forEach((button) => {
-    button.querySelector(".theme-label").textContent = themeLabels[savedTheme];
-    button.addEventListener("click", () => {
-      const current = root.dataset.theme || "cloud";
-      const nextTheme = themes[(themes.indexOf(current) + 1) % themes.length];
-      root.dataset.theme = nextTheme;
-      localStorage.setItem(THEME_KEY, nextTheme);
-      themeButtons.forEach((node) => {
-        node.querySelector(".theme-label").textContent = themeLabels[nextTheme];
+  const total = getCart().reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const totalNode = document.querySelector("[data-payment-total]");
+  if (totalNode) totalNode.textContent = formatCurrency(total);
+
+  document.querySelectorAll("[data-method-tab]").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll("[data-method-tab]").forEach((node) => node.classList.remove("is-active"));
+      tab.classList.add("is-active");
+      const method = tab.dataset.method;
+      form.dataset.method = method;
+      document.querySelectorAll("[data-payment-panel]").forEach((panel) => {
+        panel.classList.toggle("hidden", panel.dataset.paymentPanel !== method);
       });
-      showToast(`Theme changed to ${themeLabels[nextTheme]}.`);
     });
   });
-};
-
-const setupReveal = () => {
-  if (!("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  revealItems.forEach((item) => revealObserver.observe(item));
-};
-
-const setupTilt = () => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
-
-  tiltCards.forEach((card) => {
-    const handleMove = (event) => {
-      const bounds = card.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width;
-      const y = (event.clientY - bounds.top) / bounds.height;
-      const rotateY = (x - 0.5) * 14;
-      const rotateX = (0.5 - y) * 14;
-      card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    };
-
-    const reset = () => {
-      card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg)";
-    };
-
-    card.addEventListener("pointermove", handleMove);
-    card.addEventListener("pointerleave", reset);
-  });
-};
-
-const setupLogin = () => {
-  const form = document.querySelector("[data-auth-form]");
-  const skipButton = document.querySelector("[data-skip-login]");
-
-  if (!form) {
-    return;
-  }
-
-  const params = new URLSearchParams(window.location.search);
-  const returnUrl = params.get("return") || "index.html";
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    if (!authMeetsCommerceRequirements(getAuth())) {
+      redirectToLogin();
+      return;
+    }
+
+    if (!getLocations().length) {
+      showToast("Please save a delivery location before payment.");
+      window.setTimeout(() => {
+        window.location.href = "locations.html";
+      }, 700);
+      return;
+    }
+
+    const method = form.dataset.method || "card";
     const formData = new FormData(form);
+
+    if (method === "upi") {
+      const upi = String(formData.get("upi") || "").trim();
+      if (!upi) {
+        showToast("Please enter your UPI ID.");
+        return;
+      }
+      showToast(`Payment request sent to ${upi}.`);
+    } else {
+      const card = String(formData.get("cardNumber") || "").trim();
+      if (!card) {
+        showToast("Please enter your card details.");
+        return;
+      }
+      showToast("Card payment confirmed.");
+    }
+
+    setCart([]);
+    updateCartCount();
+    window.setTimeout(() => {
+      window.location.href = "home.html";
+    }, 900);
+  });
+};
+
+const setupLogin = () => {
+  const form = document.querySelector("[data-login-form]");
+  const skip = document.querySelector("[data-skip-login]");
+  if (!form) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const returnUrl = params.get("return") || "home.html";
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
     const profile = {
-      name: String(formData.get("name") || "").trim(),
-      email: String(formData.get("email") || "").trim(),
-      phone: String(formData.get("phone") || "").trim(),
-      audience: formData.getAll("audience"),
+      name: String(data.get("name") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      gender: String(data.get("gender") || "").trim(),
     };
 
-    if (!profile.name || (!profile.email && !profile.phone)) {
-      showToast("Add your name and either email or phone to continue.");
+    if (!profile.name || !profile.gender) {
+      showToast("Name and gender are required.");
+      return;
+    }
+
+    if (!phoneIsValid(profile.phone)) {
+      showToast("Phone number must start with +91 and include 10 digits.");
       return;
     }
 
     setAuth(profile);
-
-    const pendingItemRaw = localStorage.getItem(PENDING_ITEM_KEY);
-    if (pendingItemRaw) {
-      try {
-        addItemToCart(JSON.parse(pendingItemRaw));
-      } catch {
-        // Ignore malformed storage
-      }
-      localStorage.removeItem(PENDING_ITEM_KEY);
-    } else {
-      showToast("You are signed in and ready to shop.");
-    }
-
-    window.location.href = returnUrl;
+    window.location.href = `index.html?next=${encodeURIComponent(returnUrl)}`;
   });
 
-  skipButton?.addEventListener("click", () => {
-    window.location.href = returnUrl;
+  skip?.addEventListener("click", () => {
+    window.location.href = `index.html?next=${encodeURIComponent(returnUrl)}`;
+  });
+};
+
+const setupWelcome = () => {
+  if (document.body.dataset.page !== "welcome") return;
+
+  const params = new URLSearchParams(window.location.search);
+  const next = params.get("next") || "home.html";
+  const enter = document.querySelector("[data-enter-site]");
+
+  const goNext = () => {
+    window.location.href = next;
+  };
+
+  enter?.addEventListener("click", goNext);
+  setTimeout(goNext, 4200);
+};
+
+const renderUziStatus = () => {
+  document.querySelectorAll("[data-product-status]").forEach((node) => {
+    const slug = node.dataset.productStatus;
+    const product = PRODUCT_CATALOG[slug];
+    if (!product) return;
+    const state = getOfferState(product);
+    node.textContent = state.label;
+    node.classList.toggle("is-danger", state.unavailable);
+  });
+};
+
+const renderProfile = () => {
+  const form = document.querySelector("[data-profile-form]");
+  const auth = getAuth();
+  if (!form || !auth) return;
+
+  form.elements.name.value = auth.name || "";
+  form.elements.email.value = auth.email || "";
+  form.elements.phone.value = auth.phone || "";
+  form.elements.gender.value = auth.gender || "";
+};
+
+const setupProfile = () => {
+  renderProfile();
+  const form = document.querySelector("[data-profile-form]");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const updated = {
+      name: String(data.get("name") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      gender: String(data.get("gender") || "").trim(),
+    };
+
+    if (!updated.name || !updated.gender) {
+      showToast("Name and gender are required.");
+      return;
+    }
+    if (!phoneIsValid(updated.phone)) {
+      showToast("Phone number must start with +91 and include 10 digits.");
+      return;
+    }
+    setAuth(updated);
+    updateAuthLinks();
+    showToast("Profile updated.");
+  });
+};
+
+const renderLocations = () => {
+  const list = document.querySelector("[data-location-list]");
+  if (!list) return;
+
+  const locations = getLocations();
+  list.innerHTML = "";
+
+  if (!locations.length) {
+    list.innerHTML = `<div class="summary-card"><h3>No saved locations yet</h3><p class="copy">Location is mandatory before checkout. Add one below.</p></div>`;
+    return;
+  }
+
+  locations.forEach((location, index) => {
+    const card = document.createElement("div");
+    card.className = "location-card";
+    card.innerHTML = `
+      <div class="location-meta">
+        <div>
+          <h3>${location.label}</h3>
+          <p class="meta-copy">${location.type}</p>
+        </div>
+        <button class="ghost-button" type="button" data-remove-location="${index}">Remove</button>
+      </div>
+      <p class="meta-copy">${location.houseNumber}, ${location.fullAddress}, ${location.state} - ${location.pincode}</p>
+      <p class="meta-copy">${location.mapLocation || ""}</p>
+    `;
+    list.appendChild(card);
+  });
+};
+
+const setupLocations = () => {
+  renderLocations();
+
+  const form = document.querySelector("[data-location-form]");
+  const mapButton = document.querySelector("[data-map-detect]");
+  if (!form) return;
+
+  mapButton?.addEventListener("click", () => {
+    if (!navigator.geolocation) {
+      showToast("Geolocation is not supported in this browser.");
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        form.elements.mapLocation.value = `Lat ${coords.latitude.toFixed(4)}, Lng ${coords.longitude.toFixed(4)}`;
+        showToast("Current map location captured.");
+      },
+      () => showToast("Unable to capture map location.")
+    );
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const location = {
+      label: String(data.get("label") || "").trim(),
+      type: String(data.get("type") || "").trim(),
+      houseNumber: String(data.get("houseNumber") || "").trim(),
+      fullAddress: String(data.get("fullAddress") || "").trim(),
+      state: String(data.get("state") || "").trim(),
+      pincode: String(data.get("pincode") || "").trim(),
+      mapLocation: String(data.get("mapLocation") || "").trim(),
+    };
+
+    if (!location.label || !location.houseNumber || !location.fullAddress || !location.state || !location.pincode) {
+      showToast("House number, full address, pincode, and state are mandatory.");
+      return;
+    }
+
+    const all = getLocations();
+    if (all.some((entry) => entry.label.toLowerCase() === location.label.toLowerCase())) {
+      showToast("Location labels must be unique.");
+      return;
+    }
+
+    const home = all.find((entry) => entry.type === "Home");
+    const work = all.find((entry) => entry.type === "Work");
+    const currentFull = `${location.houseNumber} ${location.fullAddress}`.toLowerCase();
+
+    if (location.type === "Home" && work && `${work.houseNumber} ${work.fullAddress}`.toLowerCase() === currentFull) {
+      showToast("Home and work locations cannot be the same.");
+      return;
+    }
+    if (location.type === "Work" && home && `${home.houseNumber} ${home.fullAddress}`.toLowerCase() === currentFull) {
+      showToast("Work and home locations cannot be the same.");
+      return;
+    }
+
+    all.push(location);
+    setLocations(all);
+    form.reset();
+    renderLocations();
+    showToast("Location saved.");
+  });
+
+  document.body.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove-location]");
+    if (!button) return;
+    const all = getLocations();
+    all.splice(Number(button.dataset.removeLocation), 1);
+    setLocations(all);
+    renderLocations();
   });
 };
 
 const setupContact = () => {
   const form = document.querySelector("[data-contact-form]");
-
-  if (!form) {
-    return;
-  }
-
+  if (!form) return;
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const formData = new FormData(form);
-    const email = String(formData.get("email") || "").trim();
-    const phone = String(formData.get("phone") || "").trim();
-
-    if (!email && !phone) {
-      showToast("Add an email or phone number so we can contact you.");
+    const data = new FormData(form);
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+    if (!email || !message) {
+      showToast("Please enter your email and your query.");
       return;
     }
-
     form.reset();
-    showToast(email ? `Ask sent from ${email}. We will reach out soon.` : `Ask sent for ${phone}. We will reach out soon.`);
+    showToast("Your query has been sent.");
   });
 };
 
-const setupLocations = () => {
-  const form = document.querySelector("[data-location-form]");
-  const list = document.querySelector("[data-location-list]");
+const setupModelGallery = () => {
+  const modal = document.querySelector("[data-model-modal]");
+  if (!modal) return;
 
-  if (!form || !list) {
-    return;
-  }
+  const grid = modal.querySelector("[data-model-grid]");
+  const title = modal.querySelector("[data-model-title]");
 
-  const renderLocations = () => {
-    const locations = JSON.parse(localStorage.getItem(LOCATIONS_KEY) || "[]");
-    list.innerHTML = "";
-
-    if (!locations.length) {
-      list.innerHTML = `<div class="empty-state soft-panel"><p class="empty-copy">No saved locations yet. Add a home, work, or other address.</p></div>`;
-      return;
-    }
-
-    locations.forEach((location, index) => {
-      const card = document.createElement("article");
-      card.className = "location-card";
-      card.innerHTML = `
-        <div class="location-meta">
-          <h3>${location.label}</h3>
-          <button class="ghost-button" type="button" data-remove-location="${index}">Remove</button>
-        </div>
-        <p class="mini-label">${location.type}</p>
-        <p class="panel-copy">${location.address}</p>
-      `;
-      list.appendChild(card);
-    });
-  };
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    const entry = {
-      label: String(formData.get("label") || "").trim(),
-      type: String(formData.get("type") || "other").trim(),
-      address: String(formData.get("address") || "").trim(),
-    };
-
-    if (!entry.label || !entry.address) {
-      showToast("Add a location name and address.");
-      return;
-    }
-
-    const locations = JSON.parse(localStorage.getItem(LOCATIONS_KEY) || "[]");
-    const normalizedAddress = entry.address.toLowerCase();
-    const duplicateLabel = locations.some(
-      (location) => location.label.toLowerCase() === entry.label.toLowerCase()
-    );
-
-    if (duplicateLabel) {
-      showToast("Location names must be unique.");
-      return;
-    }
-
-    const homeLocation = locations.find((location) => location.type === "home");
-    const workLocation = locations.find((location) => location.type === "work");
-
-    if (entry.type === "home" && workLocation && workLocation.address.toLowerCase() === normalizedAddress) {
-      showToast("Home and work addresses must stay different.");
-      return;
-    }
-
-    if (entry.type === "work" && homeLocation && homeLocation.address.toLowerCase() === normalizedAddress) {
-      showToast("Work and home addresses must stay different.");
-      return;
-    }
-
-    locations.push(entry);
-    localStorage.setItem(LOCATIONS_KEY, JSON.stringify(locations));
-    form.reset();
-    renderLocations();
-    showToast(`${entry.label} saved.`);
-  });
-
-  list.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-remove-location]");
-
-    if (!button) {
-      return;
-    }
-
-    const locations = JSON.parse(localStorage.getItem(LOCATIONS_KEY) || "[]");
-    locations.splice(Number(button.dataset.removeLocation), 1);
-    localStorage.setItem(LOCATIONS_KEY, JSON.stringify(locations));
-    renderLocations();
-    showToast("Location removed.");
-  });
-
-  renderLocations();
-};
-
-const setupPayment = () => {
-  const form = document.querySelector("[data-payment-form]");
-  const totalNode = document.querySelector("[data-payment-total]");
-
-  if (!form) {
-    return;
-  }
-
-  const cart = getCart();
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  if (totalNode) {
-    totalNode.textContent = formatCurrency(total);
-  }
-
-  methodTabs.forEach((button) => {
+  document.querySelectorAll("[data-model-tab]").forEach((button) => {
     button.addEventListener("click", () => {
-      const method = button.dataset.method;
-
-      methodTabs.forEach((tab) => tab.classList.toggle("is-active", tab === button));
-      paymentPanels.forEach((panel) => panel.classList.toggle("hidden", panel.dataset.paymentPanel !== method));
-      form.dataset.selectedMethod = method;
+      const key = button.dataset.modelTab;
+      title.textContent = `${key} Models`;
+      grid.innerHTML = modelPhotos[key]
+        .map(
+          (label) => `
+            <div class="model-card">
+              <div class="mini-label" style="position: absolute; left: 14px; bottom: 12px; margin: 0;">${label}</div>
+            </div>
+          `
+        )
+        .join("");
+      modal.classList.remove("hidden");
     });
   });
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!getAuth()) {
-      redirectToLogin();
-      return;
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal || event.target.closest("[data-close-model]")) {
+      modal.classList.add("hidden");
     }
-
-    const formData = new FormData(form);
-    const method = form.dataset.selectedMethod || "card";
-
-    if (!cart.length) {
-      showToast("Your cart is empty right now.");
-      return;
-    }
-
-    if (method === "upi") {
-      const upiId = String(formData.get("upi") || "").trim();
-
-      if (!upiId) {
-        showToast("Add your UPI ID to receive the payment request.");
-        return;
-      }
-
-      showToast(`Payment request sent to ${upiId}.`);
-    } else {
-      const cardNumber = String(formData.get("cardNumber") || "").trim();
-      const cardName = String(formData.get("cardName") || "").trim();
-
-      if (!cardNumber || !cardName) {
-        showToast("Complete your card details to continue.");
-        return;
-      }
-
-      showToast("Card payment authorized. Order confirmed.");
-    }
-
-    localStorage.removeItem(CART_KEY);
-    updateCartIndicators();
-    window.setTimeout(() => {
-      window.location.href = "cart.html";
-    }, 900);
   });
 };
 
-const setupProtectedButtons = () => {
-  document.querySelectorAll("[data-requires-auth]").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      if (getAuth()) {
-        return;
-      }
-
-      event.preventDefault();
-      redirectToLogin();
-    });
-  });
-};
-
+setupTheme();
+updateCartCount();
+updateAuthLinks();
+renderProductPage();
+renderUziStatus();
 setupReveal();
 setupTilt();
-setupTheme();
-updateCartIndicators();
-updateAuthUI();
-handleAddToCartButtons();
-renderCart();
-attachCartEvents();
-setupLogin();
-setupContact();
-setupLocations();
+setupProductActions();
+setupCart();
 setupPayment();
-setupProtectedButtons();
+setupLogin();
+setupWelcome();
+setupProfile();
+setupLocations();
+setupContact();
+setupModelGallery();

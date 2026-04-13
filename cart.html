@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart | SCOTT CART</title>
-    <meta name="description" content="Cart page for SCOTT CART showing item prices, quantity, subtotal, and total before checkout." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -15,47 +14,53 @@
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
       <header class="site-header">
-        <div class="header-left">
-          <a class="home-button" href="index.html">Home</a>
-          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        <div class="header-top">
+          <div class="brand-lockup">
+            <a class="home-logo" href="home.html">⌂</a>
+            <a class="brand-lockup" href="home.html"><span class="logo-mark"></span><span class="logo-copy"><strong>SCOTT CART</strong><span>Cart</span></span></a>
+          </div>
+          <div class="utility-row">
+            <button class="theme-switch" type="button" data-theme-toggle><span class="theme-label">Noir</span></button>
+            <a class="utility-link" href="profile.html" data-auth-button>Log In / Sign Up</a>
+          </div>
         </div>
-        <nav class="site-nav">
-          <a href="drops.html">Drops</a>
-          <a href="new-arrivals.html">New Arrivals</a>
-          <a class="is-active" href="cart.html">Cart</a>
-          <a href="payment.html">Payment</a>
-        </nav>
-        <div class="header-actions">
-          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
-          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        <div class="header-tools">
+          <nav class="site-nav">
+            <a href="home.html">Home</a>
+            <a href="drops.html">Drops</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a class="is-active" href="cart.html">Cart</a>
+            <a href="payment.html">Payment</a>
+          </nav>
         </div>
       </header>
-      <main>
+      <main class="page-main">
         <section class="cart-layout">
           <div>
-            <div class="section-heading reveal">
+            <div class="section-header reveal">
               <p class="eyebrow">Cart</p>
-              <h2>Your saved items and total price.</h2>
+              <h1 class="section-title">Individual price and total price stay visible here.</h1>
             </div>
-            <div class="empty-state soft-panel reveal hidden" data-cart-empty>
-              <p class="empty-copy">Your cart is empty right now. Add products from Drops, Sneakers, New Arrivals, or Build Your Dreams.</p>
+            <div class="summary-card hidden" data-cart-empty>
+              <h3>Your cart is empty</h3>
+              <p class="copy">Open any product page and use Add to Cart after accepting the terms.</p>
             </div>
-            <div class="cart-list" data-cart-list></div>
+            <div class="grid-2" data-cart-list style="grid-template-columns: 1fr;"></div>
           </div>
           <div class="summary-card reveal delay-1">
             <h3>Order summary</h3>
             <div class="summary-line"><span>Subtotal</span><strong data-cart-subtotal>₹0</strong></div>
-            <div class="summary-line"><span>Shipping</span><strong data-cart-shipping>Free</strong></div>
-            <div class="summary-line summary-total"><span>Total</span><strong data-cart-total>₹0</strong></div>
-            <p class="form-hint">Free shipping all over India. Remote areas are not available. No cash on delivery.</p>
+            <div class="summary-line"><span>Shipping</span><strong>Free</strong></div>
+            <div class="summary-line"><span>Total</span><strong data-cart-total>₹0</strong></div>
+            <p class="copy">Location is mandatory before checkout. Free shipping all over India except remote areas.</p>
             <div class="button-row">
-              <a class="primary-button" href="payment.html" data-requires-auth>Proceed to Checkout</a>
-              <a class="secondary-button" href="new-arrivals.html">Continue Shopping</a>
+              <a class="primary-button" href="payment.html">Proceed to Checkout</a>
+              <a class="secondary-button" href="home.html">Continue Shopping</a>
             </div>
           </div>
         </section>
       </main>
-      <footer class="footer-shell"><div class="footer-panel"><span>Individual item prices and the overall total are shown here.</span><span>Checkout requires login.</span></div></footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
     </div>
     <script src="script.js"></script>
   </body>
