@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment | SCOTT CART</title>
+    <meta name="description" content="Payment page for SCOTT CART with card payment and UPI request flow." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header">
+        <div class="header-left">
+          <a class="home-button" href="index.html">Home</a>
+          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        </div>
+        <nav class="site-nav">
+          <a href="cart.html">Cart</a>
+          <a class="is-active" href="payment.html">Payment</a>
+          <a href="locations.html">Locations</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
+          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        </div>
+      </header>
+      <main>
+        <section class="payment-layout">
+          <div class="contact-card reveal">
+            <p class="eyebrow">Payment</p>
+            <h2>Card or UPI only.</h2>
+            <p class="section-copy">Cash on delivery is not available. For UPI, users can add their UPI ID and the site sends a payment request message.</p>
+            <div class="method-tabs">
+              <button class="tab-button is-active" type="button" data-method-tab data-method="card">Card Payment</button>
+              <button class="tab-button" type="button" data-method-tab data-method="upi">UPI Payment</button>
+            </div>
+            <form class="form-grid" data-payment-form data-selected-method="card">
+              <div data-payment-panel="card">
+                <input class="input-field" type="text" name="cardName" placeholder="Debargha Adhikary" />
+                <input class="input-field" type="text" name="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" />
+                <div class="summary-grid">
+                  <input class="input-field" type="text" name="expiry" placeholder="Expiry" />
+                  <input class="input-field" type="text" name="cvv" placeholder="CVV" />
+                </div>
+              </div>
+              <div class="hidden" data-payment-panel="upi">
+                <input class="input-field" type="text" name="upi" placeholder="debargha@upi" />
+                <p class="form-hint">Enter your UPI ID and we send a payment request for the full amount.</p>
+              </div>
+              <button class="primary-button" type="submit">Pay Now</button>
+            </form>
+          </div>
+          <div class="summary-card reveal delay-1">
+            <h3>Payment summary</h3>
+            <div class="summary-line"><span>Total due</span><strong data-payment-total>₹0</strong></div>
+            <ul class="policy-list">
+              <li>Free shipping all over India except remote areas.</li>
+              <li>Home and work delivery addresses can be managed in saved locations.</li>
+              <li>Card and UPI only. Cash on delivery is disabled.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <footer class="footer-shell"><div class="footer-panel"><span>Payment page now supports card and UPI flow.</span><span>UPI sends a request message in this prototype.</span></div></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

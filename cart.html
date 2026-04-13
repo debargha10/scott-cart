@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | SCOTT CART</title>
+    <meta name="description" content="Cart page for SCOTT CART showing item prices, quantity, subtotal, and total before checkout." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header">
+        <div class="header-left">
+          <a class="home-button" href="index.html">Home</a>
+          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        </div>
+        <nav class="site-nav">
+          <a href="drops.html">Drops</a>
+          <a href="new-arrivals.html">New Arrivals</a>
+          <a class="is-active" href="cart.html">Cart</a>
+          <a href="payment.html">Payment</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
+          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        </div>
+      </header>
+      <main>
+        <section class="cart-layout">
+          <div>
+            <div class="section-heading reveal">
+              <p class="eyebrow">Cart</p>
+              <h2>Your saved items and total price.</h2>
+            </div>
+            <div class="empty-state soft-panel reveal hidden" data-cart-empty>
+              <p class="empty-copy">Your cart is empty right now. Add products from Drops, Sneakers, New Arrivals, or Build Your Dreams.</p>
+            </div>
+            <div class="cart-list" data-cart-list></div>
+          </div>
+          <div class="summary-card reveal delay-1">
+            <h3>Order summary</h3>
+            <div class="summary-line"><span>Subtotal</span><strong data-cart-subtotal>₹0</strong></div>
+            <div class="summary-line"><span>Shipping</span><strong data-cart-shipping>Free</strong></div>
+            <div class="summary-line summary-total"><span>Total</span><strong data-cart-total>₹0</strong></div>
+            <p class="form-hint">Free shipping all over India. Remote areas are not available. No cash on delivery.</p>
+            <div class="button-row">
+              <a class="primary-button" href="payment.html" data-requires-auth>Proceed to Checkout</a>
+              <a class="secondary-button" href="new-arrivals.html">Continue Shopping</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer-shell"><div class="footer-panel"><span>Individual item prices and the overall total are shown here.</span><span>Checkout requires login.</span></div></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Foundation | SCOTT CART</title>
+    <meta name="description" content="Technical foundation page for SCOTT CART showing product, auth, payment, and application flow." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header">
+        <div class="header-left">
+          <a class="home-button" href="index.html">Home</a>
+          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        </div>
+        <nav class="site-nav">
+          <a href="explore-experience.html">Explore Experience</a>
+          <a class="is-active" href="foundation.html">Foundation</a>
+          <a href="cart.html">Cart</a>
+          <a href="payment.html">Payment</a>
+          <a href="locations.html">Locations</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
+          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        </div>
+      </header>
+      <main>
+        <section class="subpage-hero">
+          <div class="subpage-copy reveal">
+            <p class="eyebrow">View Foundation</p>
+            <h1>How the site experience is structured.</h1>
+            <p>The current static build already models the core product flow: page routing, login gating, add-to-cart actions, total pricing, payment methods, and saved locations.</p>
+          </div>
+          <div class="subpage-panel reveal delay-1">
+            <div class="stat-row">
+              <div class="stat-item"><strong>Auth</strong>Users can skip at first, but cart and checkout still require login or sign up.</div>
+              <div class="stat-item"><strong>Payment</strong>Card and UPI are supported. UPI triggers a request message, and COD is disabled.</div>
+            </div>
+          </div>
+        </section>
+        <section class="stack-grid">
+          <article class="stack-card reveal"><p class="mini-label">System 01</p><h3>Cart logic</h3><ul class="stack-list"><li>Product prices stored on each card</li><li>Cart quantity and totals handled in shared client-side state</li><li>Checkout route connected to payment page</li></ul></article>
+          <article class="stack-card reveal delay-1"><p class="mini-label">System 02</p><h3>Location logic</h3><ul class="stack-list"><li>Multiple saved locations supported</li><li>Labels must be unique</li><li>Home and work addresses cannot be the same</li></ul></article>
+          <article class="stack-card reveal"><p class="mini-label">System 03</p><h3>Theme control</h3><ul class="stack-list"><li>Theme switch persists user choice</li><li>Entire site updates via shared variables</li><li>Cloud, Obsidian, and Sunset modes available</li></ul></article>
+          <article class="stack-card reveal delay-1"><p class="mini-label">System 04</p><h3>Commerce policy</h3><ul class="stack-list"><li>Free shipping across India</li><li>Remote areas excluded</li><li>No cash on delivery</li></ul></article>
+        </section>
+      </main>
+      <footer class="footer-shell"><div class="footer-panel"><span>Foundation page now exists separately from the homepage.</span><span>It can later become your real architecture showcase.</span></div></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

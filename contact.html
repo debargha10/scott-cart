@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | SCOTT CART</title>
+    <meta name="description" content="Contact SCOTT CART using your email or phone number and send an ask." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <header class="site-header">
+        <div class="header-left">
+          <a class="home-button" href="index.html">Home</a>
+          <a class="brand" href="index.html"><span class="brand-mark">SC</span><span class="brand-text">SCOTT CART</span></a>
+        </div>
+        <nav class="site-nav">
+          <a href="explore-experience.html">Explore</a>
+          <a href="foundation.html">Foundation</a>
+          <a class="is-active" href="contact.html">Contact</a>
+          <a href="locations.html">Locations</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-switch" type="button" data-theme-toggle><span class="theme-dot"></span><span class="theme-label">Cloud</span></button>
+          <a class="icon-link" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+          <a class="icon-link" href="login.html" data-auth-button>Log In / Sign Up</a>
+        </div>
+      </header>
+      <main>
+        <section class="contact-layout">
+          <div class="contact-card reveal">
+            <p class="eyebrow">Contact Us</p>
+            <h2>Reach out by email or phone and hit Ask.</h2>
+            <p class="section-copy">Use either your email address or phone number. Add both if you want. Once you hit Ask, the site confirms the request in-page.</p>
+            <form class="form-grid" data-contact-form>
+              <input class="input-field" type="text" name="name" placeholder="Your name" />
+              <input class="input-field" type="email" name="email" placeholder="Your email address" />
+              <input class="input-field" type="tel" name="phone" placeholder="Your phone number" />
+              <textarea class="textarea-field" name="message" placeholder="What do you want to ask us?"></textarea>
+              <button class="primary-button" type="submit">Ask</button>
+            </form>
+          </div>
+          <div class="summary-card reveal delay-1">
+            <h3>Contact notes</h3>
+            <ul class="policy-list">
+              <li>Email or phone can be used to start the conversation.</li>
+              <li>The current build shows a confirmation message after submission.</li>
+              <li>This page can later connect to a real backend email service.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <footer class="footer-shell"><div class="footer-panel"><span>Contact page added as requested.</span><span>Ask button works through the shared client-side flow.</span></div></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
