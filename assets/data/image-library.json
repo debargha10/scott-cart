@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "IMG001",
+    "slug": "editorial-home",
+    "category": "hero",
+    "title": "editorial home",
+    "image": "assets/images/editorial-home.svg",
+    "alt": "editorial home image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG002",
+    "slug": "static-drip-tee",
+    "category": "apparel",
+    "title": "static drip tee",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "static drip tee image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG003",
+    "slug": "midnight-pulse-hoodie",
+    "category": "apparel",
+    "title": "midnight pulse hoodie",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "midnight pulse hoodie image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG004",
+    "slug": "cloudline-sweatshirt",
+    "category": "apparel",
+    "title": "cloudline sweatshirt",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "cloudline sweatshirt image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG005",
+    "slug": "blue-shift-denim",
+    "category": "apparel",
+    "title": "blue shift denim",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "blue shift denim image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG006",
+    "slug": "vector-track-pant",
+    "category": "apparel",
+    "title": "vector track pant",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "vector track pant image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG007",
+    "slug": "silk-mark-band",
+    "category": "apparel",
+    "title": "silk mark band",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "silk mark band image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG008",
+    "slug": "prism-dash",
+    "category": "sneaker",
+    "title": "prism dash",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "prism dash image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG009",
+    "slug": "chrome-sprint",
+    "category": "sneaker",
+    "title": "chrome sprint",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "chrome sprint image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG010",
+    "slug": "fluid-rise",
+    "category": "sneaker",
+    "title": "fluid rise",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "fluid rise image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG011",
+    "slug": "volt-arc",
+    "category": "sneaker",
+    "title": "volt arc",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "volt arc image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG012",
+    "slug": "obsidian-runner",
+    "category": "sneaker",
+    "title": "obsidian runner",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "obsidian runner image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG013",
+    "slug": "solar-echo",
+    "category": "sneaker",
+    "title": "solar echo",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "solar echo image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG014",
+    "slug": "nova-carrier",
+    "category": "bag",
+    "title": "nova carrier",
+    "image": "assets/images/bag-core.svg",
+    "alt": "nova carrier image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG015",
+    "slug": "static-layer-jacket",
+    "category": "apparel",
+    "title": "static layer jacket",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "static layer jacket image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG016",
+    "slug": "glassline-tee",
+    "category": "apparel",
+    "title": "glassline tee",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "glassline tee image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG017",
+    "slug": "halo-frame",
+    "category": "sunglasses",
+    "title": "halo frame",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "halo frame image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG018",
+    "slug": "mirror-drift",
+    "category": "sunglasses",
+    "title": "mirror drift",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "mirror drift image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG019",
+    "slug": "solar-tint",
+    "category": "sunglasses",
+    "title": "solar tint",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "solar tint image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG020",
+    "slug": "uzi-vector-tee",
+    "category": "uzi",
+    "title": "uzi vector tee",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "uzi vector tee image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG021",
+    "slug": "uzi-neon-tee",
+    "category": "uzi",
+    "title": "uzi neon tee",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "uzi neon tee image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG022",
+    "slug": "uzi-stage-track",
+    "category": "uzi",
+    "title": "uzi stage track",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "uzi stage track image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG023",
+    "slug": "uzi-limited-bandana",
+    "category": "uzi",
+    "title": "uzi limited bandana",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "uzi limited bandana image",
+    "group": "catalog",
+    "status": "active"
+  },
+  {
+    "id": "IMG024",
+    "slug": "library-slot-024",
+    "category": "sunglasses",
+    "title": "Library Slot 24",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 24",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG025",
+    "slug": "library-slot-025",
+    "category": "uzi",
+    "title": "Library Slot 25",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 25",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG026",
+    "slug": "library-slot-026",
+    "category": "apparel",
+    "title": "Library Slot 26",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 26",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG027",
+    "slug": "library-slot-027",
+    "category": "sneaker",
+    "title": "Library Slot 27",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 27",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG028",
+    "slug": "library-slot-028",
+    "category": "bag",
+    "title": "Library Slot 28",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 28",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG029",
+    "slug": "library-slot-029",
+    "category": "sunglasses",
+    "title": "Library Slot 29",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 29",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG030",
+    "slug": "library-slot-030",
+    "category": "uzi",
+    "title": "Library Slot 30",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 30",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG031",
+    "slug": "library-slot-031",
+    "category": "apparel",
+    "title": "Library Slot 31",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 31",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG032",
+    "slug": "library-slot-032",
+    "category": "sneaker",
+    "title": "Library Slot 32",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 32",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG033",
+    "slug": "library-slot-033",
+    "category": "bag",
+    "title": "Library Slot 33",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 33",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG034",
+    "slug": "library-slot-034",
+    "category": "sunglasses",
+    "title": "Library Slot 34",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 34",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG035",
+    "slug": "library-slot-035",
+    "category": "uzi",
+    "title": "Library Slot 35",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 35",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG036",
+    "slug": "library-slot-036",
+    "category": "apparel",
+    "title": "Library Slot 36",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 36",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG037",
+    "slug": "library-slot-037",
+    "category": "sneaker",
+    "title": "Library Slot 37",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 37",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG038",
+    "slug": "library-slot-038",
+    "category": "bag",
+    "title": "Library Slot 38",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 38",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG039",
+    "slug": "library-slot-039",
+    "category": "sunglasses",
+    "title": "Library Slot 39",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 39",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG040",
+    "slug": "library-slot-040",
+    "category": "uzi",
+    "title": "Library Slot 40",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 40",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG041",
+    "slug": "library-slot-041",
+    "category": "apparel",
+    "title": "Library Slot 41",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 41",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG042",
+    "slug": "library-slot-042",
+    "category": "sneaker",
+    "title": "Library Slot 42",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 42",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG043",
+    "slug": "library-slot-043",
+    "category": "bag",
+    "title": "Library Slot 43",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 43",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG044",
+    "slug": "library-slot-044",
+    "category": "sunglasses",
+    "title": "Library Slot 44",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 44",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG045",
+    "slug": "library-slot-045",
+    "category": "uzi",
+    "title": "Library Slot 45",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 45",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG046",
+    "slug": "library-slot-046",
+    "category": "apparel",
+    "title": "Library Slot 46",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 46",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG047",
+    "slug": "library-slot-047",
+    "category": "sneaker",
+    "title": "Library Slot 47",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 47",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG048",
+    "slug": "library-slot-048",
+    "category": "bag",
+    "title": "Library Slot 48",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 48",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG049",
+    "slug": "library-slot-049",
+    "category": "sunglasses",
+    "title": "Library Slot 49",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 49",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG050",
+    "slug": "library-slot-050",
+    "category": "uzi",
+    "title": "Library Slot 50",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 50",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG051",
+    "slug": "library-slot-051",
+    "category": "apparel",
+    "title": "Library Slot 51",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 51",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG052",
+    "slug": "library-slot-052",
+    "category": "sneaker",
+    "title": "Library Slot 52",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 52",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG053",
+    "slug": "library-slot-053",
+    "category": "bag",
+    "title": "Library Slot 53",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 53",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG054",
+    "slug": "library-slot-054",
+    "category": "sunglasses",
+    "title": "Library Slot 54",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 54",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG055",
+    "slug": "library-slot-055",
+    "category": "uzi",
+    "title": "Library Slot 55",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 55",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG056",
+    "slug": "library-slot-056",
+    "category": "apparel",
+    "title": "Library Slot 56",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 56",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG057",
+    "slug": "library-slot-057",
+    "category": "sneaker",
+    "title": "Library Slot 57",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 57",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG058",
+    "slug": "library-slot-058",
+    "category": "bag",
+    "title": "Library Slot 58",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 58",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG059",
+    "slug": "library-slot-059",
+    "category": "sunglasses",
+    "title": "Library Slot 59",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 59",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG060",
+    "slug": "library-slot-060",
+    "category": "uzi",
+    "title": "Library Slot 60",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 60",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG061",
+    "slug": "library-slot-061",
+    "category": "apparel",
+    "title": "Library Slot 61",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 61",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG062",
+    "slug": "library-slot-062",
+    "category": "sneaker",
+    "title": "Library Slot 62",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 62",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG063",
+    "slug": "library-slot-063",
+    "category": "bag",
+    "title": "Library Slot 63",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 63",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG064",
+    "slug": "library-slot-064",
+    "category": "sunglasses",
+    "title": "Library Slot 64",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 64",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG065",
+    "slug": "library-slot-065",
+    "category": "uzi",
+    "title": "Library Slot 65",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 65",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG066",
+    "slug": "library-slot-066",
+    "category": "apparel",
+    "title": "Library Slot 66",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 66",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG067",
+    "slug": "library-slot-067",
+    "category": "sneaker",
+    "title": "Library Slot 67",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 67",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG068",
+    "slug": "library-slot-068",
+    "category": "bag",
+    "title": "Library Slot 68",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 68",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG069",
+    "slug": "library-slot-069",
+    "category": "sunglasses",
+    "title": "Library Slot 69",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 69",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG070",
+    "slug": "library-slot-070",
+    "category": "uzi",
+    "title": "Library Slot 70",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 70",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG071",
+    "slug": "library-slot-071",
+    "category": "apparel",
+    "title": "Library Slot 71",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 71",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG072",
+    "slug": "library-slot-072",
+    "category": "sneaker",
+    "title": "Library Slot 72",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 72",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG073",
+    "slug": "library-slot-073",
+    "category": "bag",
+    "title": "Library Slot 73",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 73",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG074",
+    "slug": "library-slot-074",
+    "category": "sunglasses",
+    "title": "Library Slot 74",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 74",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG075",
+    "slug": "library-slot-075",
+    "category": "uzi",
+    "title": "Library Slot 75",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 75",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG076",
+    "slug": "library-slot-076",
+    "category": "apparel",
+    "title": "Library Slot 76",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 76",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG077",
+    "slug": "library-slot-077",
+    "category": "sneaker",
+    "title": "Library Slot 77",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 77",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG078",
+    "slug": "library-slot-078",
+    "category": "bag",
+    "title": "Library Slot 78",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 78",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG079",
+    "slug": "library-slot-079",
+    "category": "sunglasses",
+    "title": "Library Slot 79",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 79",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG080",
+    "slug": "library-slot-080",
+    "category": "uzi",
+    "title": "Library Slot 80",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 80",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG081",
+    "slug": "library-slot-081",
+    "category": "apparel",
+    "title": "Library Slot 81",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 81",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG082",
+    "slug": "library-slot-082",
+    "category": "sneaker",
+    "title": "Library Slot 82",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 82",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG083",
+    "slug": "library-slot-083",
+    "category": "bag",
+    "title": "Library Slot 83",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 83",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG084",
+    "slug": "library-slot-084",
+    "category": "sunglasses",
+    "title": "Library Slot 84",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 84",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG085",
+    "slug": "library-slot-085",
+    "category": "uzi",
+    "title": "Library Slot 85",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 85",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG086",
+    "slug": "library-slot-086",
+    "category": "apparel",
+    "title": "Library Slot 86",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 86",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG087",
+    "slug": "library-slot-087",
+    "category": "sneaker",
+    "title": "Library Slot 87",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 87",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG088",
+    "slug": "library-slot-088",
+    "category": "bag",
+    "title": "Library Slot 88",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 88",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG089",
+    "slug": "library-slot-089",
+    "category": "sunglasses",
+    "title": "Library Slot 89",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 89",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG090",
+    "slug": "library-slot-090",
+    "category": "uzi",
+    "title": "Library Slot 90",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 90",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG091",
+    "slug": "library-slot-091",
+    "category": "apparel",
+    "title": "Library Slot 91",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 91",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG092",
+    "slug": "library-slot-092",
+    "category": "sneaker",
+    "title": "Library Slot 92",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 92",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG093",
+    "slug": "library-slot-093",
+    "category": "bag",
+    "title": "Library Slot 93",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 93",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG094",
+    "slug": "library-slot-094",
+    "category": "sunglasses",
+    "title": "Library Slot 94",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 94",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG095",
+    "slug": "library-slot-095",
+    "category": "uzi",
+    "title": "Library Slot 95",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 95",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG096",
+    "slug": "library-slot-096",
+    "category": "apparel",
+    "title": "Library Slot 96",
+    "image": "assets/images/apparel-core.svg",
+    "alt": "Placeholder image slot 96",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG097",
+    "slug": "library-slot-097",
+    "category": "sneaker",
+    "title": "Library Slot 97",
+    "image": "assets/images/sneaker-core.svg",
+    "alt": "Placeholder image slot 97",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG098",
+    "slug": "library-slot-098",
+    "category": "bag",
+    "title": "Library Slot 98",
+    "image": "assets/images/bag-core.svg",
+    "alt": "Placeholder image slot 98",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG099",
+    "slug": "library-slot-099",
+    "category": "sunglasses",
+    "title": "Library Slot 99",
+    "image": "assets/images/sunglasses-core.svg",
+    "alt": "Placeholder image slot 99",
+    "group": "library",
+    "status": "ready"
+  },
+  {
+    "id": "IMG100",
+    "slug": "library-slot-100",
+    "category": "uzi",
+    "title": "Library Slot 100",
+    "image": "assets/images/uzi-core.svg",
+    "alt": "Placeholder image slot 100",
+    "group": "library",
+    "status": "ready"
+  }
+]

@@ -9,6 +9,7 @@ const CART_KEY = "scottcart-cart";
 const LOCATIONS_KEY = "scottcart-locations";
 const PENDING_PRODUCT_KEY = "scottcart-pending-product";
 const PENDING_ACTION_KEY = "scottcart-pending-action";
+const IMAGE_LIBRARY_PATH = "assets/data/image-library.json";
 
 const themes = ["default", "obsidian", "sunset", "black-drip"];
 const themeLabels = {
@@ -211,6 +212,24 @@ const modelPhotos = {
   Kids: ["Kids 01", "Kids 02", "Kids 03", "Kids 04", "Kids 05", "Kids 06"],
 };
 
+const fallbackImageByCategory = {
+  hero: "assets/images/editorial-home.svg",
+  "T-shirt": "assets/images/apparel-core.svg",
+  Hoodie: "assets/images/apparel-core.svg",
+  "Sweat-Shirt": "assets/images/apparel-core.svg",
+  Jeans: "assets/images/apparel-core.svg",
+  "Track Pant": "assets/images/apparel-core.svg",
+  Handkerchief: "assets/images/apparel-core.svg",
+  Sneakers: "assets/images/sneaker-core.svg",
+  Bag: "assets/images/bag-core.svg",
+  Jacket: "assets/images/apparel-core.svg",
+  Sunglasses: "assets/images/sunglasses-core.svg",
+  Bandana: "assets/images/uzi-core.svg",
+};
+
+let imageLibrary = [];
+let imageMap = new Map();
+
 const formatCurrency = (value) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -231,6 +250,61 @@ const setLocations = (value) => localStorage.setItem(LOCATIONS_KEY, JSON.stringi
 const setPendingAction = (value) => localStorage.setItem(PENDING_ACTION_KEY, JSON.stringify(value));
 const getPendingAction = () => JSON.parse(localStorage.getItem(PENDING_ACTION_KEY) || "null");
 const clearPendingAction = () => localStorage.removeItem(PENDING_ACTION_KEY);
+
+const loadImageLibrary = async () => {
+  try {
+    const response = await fetch(IMAGE_LIBRARY_PATH);
+    if (!response.ok) {
+      return;
+    }
+    imageLibrary = await response.json();
+    imageMap = new Map(imageLibrary.map((entry) => [entry.slug, entry]));
+  } catch {
+    imageLibrary = [];
+    imageMap = new Map();
+  }
+};
+
+const resolveImageForSlug = (slug) => {
+  const fromLibrary = imageMap.get(slug);
+  if (fromLibrary?.image) {
+    return fromLibrary.image;
+  }
+  if (slug === "editorial-home") {
+    return fallbackImageByCategory.hero;
+  }
+  const product = PRODUCT_CATALOG[slug];
+  if (!product) {
+    return fallbackImageByCategory.hero;
+  }
+  return fallbackImageByCategory[product.category] || fallbackImageByCategory.hero;
+};
+
+const mountImage = (container, src, alt, className = "") => {
+  if (!container || container.querySelector("img")) return;
+  const image = document.createElement("img");
+  image.src = src;
+  image.alt = alt;
+  if (className) image.className = className;
+  container.prepend(image);
+  container.classList.add("has-image");
+};
+
+const enhanceStaticImages = () => {
+  document.querySelectorAll("[data-library-slug]").forEach((node) => {
+    const slug = node.dataset.librarySlug;
+    mountImage(node, resolveImageForSlug(slug), `${slug} image`, "hero-media");
+  });
+
+  document.querySelectorAll(".product-card").forEach((card) => {
+    const anchor = card.querySelector('a[href^="product.html?product="]');
+    const visual = card.querySelector(".product-visual");
+    if (!anchor || !visual) return;
+    const slug = new URL(anchor.href, window.location.href).searchParams.get("product");
+    if (!slug) return;
+    mountImage(visual, resolveImageForSlug(slug), `${slug} image`);
+  });
+};
 
 const showToast = (message) => {
   let toast = document.querySelector(".toast");
@@ -397,6 +471,7 @@ const renderProductPage = () => {
   }
 
   const offer = getOfferState(product);
+  const mainImage = resolveImageForSlug(slug);
   const sizeOptions = product.sizes
     .map(
       (size, index) => `
@@ -412,7 +487,7 @@ const renderProductPage = () => {
     .map(
       (label) => `
         <div class="card">
-          <div class="angle-tile"></div>
+          <div class="angle-tile has-image"><img src="${mainImage}" alt="${product.name} ${label}" /></div>
           <p class="mini-label" style="margin-top: 14px;">${label}</p>
         </div>
       `
@@ -446,7 +521,7 @@ const renderProductPage = () => {
         </div>
       </div>
       <div class="gallery-panel reveal delay-2">
-        <div class="product-visual" style="height: 360px;"></div>
+        <div class="product-visual has-image" style="height: 360px;"><img src="${mainImage}" alt="${product.name}" /></div>
         <div class="angles-grid" style="margin-top: 18px;">${angles}</div>
       </div>
     </section>
@@ -930,7 +1005,8 @@ const setupModelGallery = () => {
       grid.innerHTML = modelPhotos[key]
         .map(
           (label) => `
-            <div class="model-card">
+            <div class="model-card has-image">
+              <img src="${resolveImageForSlug("editorial-home")}" alt="${label}" />
               <div class="mini-label" style="position: absolute; left: 14px; bottom: 12px; margin: 0;">${label}</div>
             </div>
           `
@@ -947,19 +1023,23 @@ const setupModelGallery = () => {
   });
 };
 
-setupTheme();
-updateCartCount();
-updateAuthLinks();
-renderProductPage();
-renderUziStatus();
-setupReveal();
-setupTilt();
-setupProductActions();
-setupCart();
-setupPayment();
-setupLogin();
-setupWelcome();
-setupProfile();
-setupLocations();
-setupContact();
-setupModelGallery();
+(async () => {
+  await loadImageLibrary();
+  setupTheme();
+  updateCartCount();
+  updateAuthLinks();
+  renderProductPage();
+  enhanceStaticImages();
+  renderUziStatus();
+  setupReveal();
+  setupTilt();
+  setupProductActions();
+  setupCart();
+  setupPayment();
+  setupLogin();
+  setupWelcome();
+  setupProfile();
+  setupLocations();
+  setupContact();
+  setupModelGallery();
+})();
