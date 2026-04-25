@@ -1,0 +1,18 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" rx="56" fill="#13171E"/>
+  <rect x="132" y="126" width="936" height="948" rx="40" fill="url(#paint0_linear)" stroke="rgba(255,255,255,0.1)"/>
+  <path d="M377 309L501 215H699L823 309L890 460L780 527L728 399H472L420 527L310 460L377 309Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)" stroke-width="10"/>
+  <path d="M472 399H728V864C728 893 705 916 676 916H524C495 916 472 893 472 864V399Z" fill="rgba(255,255,255,0.06)"/>
+  <rect x="524" y="523" width="152" height="20" rx="10" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="922" cy="243" r="138" fill="url(#paint1_radial)" fill-opacity="0.5"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="600" y1="126" x2="600" y2="1074" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202631"/>
+      <stop offset="1" stop-color="#131821"/>
+    </linearGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(922 243) rotate(90) scale(138)">
+      <stop stop-color="#BFD2FF"/>
+      <stop offset="1" stop-color="#BFD2FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

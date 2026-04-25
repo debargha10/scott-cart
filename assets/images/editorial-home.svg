@@ -1,0 +1,30 @@
+<svg width="1400" height="1000" viewBox="0 0 1400 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1000" rx="56" fill="#12161D"/>
+  <circle cx="1142" cy="158" r="210" fill="url(#paint0_radial)" fill-opacity="0.55"/>
+  <circle cx="280" cy="730" r="284" fill="url(#paint1_radial)" fill-opacity="0.42"/>
+  <rect x="122" y="124" width="1156" height="752" rx="40" fill="url(#paint2_linear)" stroke="rgba(255,255,255,0.12)"/>
+  <path d="M208 614C327 480 482 409 644 412C831 416 946 514 1084 667" stroke="url(#paint3_linear)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M231 672C360 570 477 528 623 527C776 526 901 590 1038 734" stroke="rgba(255,255,255,0.18)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="226" y="198" width="326" height="394" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="848" y="326" width="290" height="286" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)"/>
+  <circle cx="390" cy="349" r="86" fill="rgba(255,255,255,0.08)"/>
+  <path d="M355 395C373 337 402 307 438 282" stroke="rgba(255,255,255,0.24)" stroke-width="10" stroke-linecap="round"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1142 158) rotate(90) scale(210)">
+      <stop stop-color="#B7CCFF"/>
+      <stop offset="1" stop-color="#B7CCFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 730) rotate(90) scale(284)">
+      <stop stop-color="#7F92B8"/>
+      <stop offset="1" stop-color="#7F92B8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paint2_linear" x1="700" y1="124" x2="700" y2="876" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2028"/>
+      <stop offset="1" stop-color="#11151B"/>
+    </linearGradient>
+    <linearGradient id="paint3_linear" x1="208" y1="412" x2="1084" y2="667" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFCFC"/>
+      <stop offset="1" stop-color="#8DB5FF"/>
+    </linearGradient>
+  </defs>
+</svg>
