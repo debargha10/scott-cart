@@ -8,6 +8,7 @@ const AUTH_KEY = "scottcart-auth";
 const CART_KEY = "scottcart-cart";
 const LOCATIONS_KEY = "scottcart-locations";
 const PENDING_PRODUCT_KEY = "scottcart-pending-product";
+const PENDING_ACTION_KEY = "scottcart-pending-action";
 
 const themes = ["default", "obsidian", "sunset", "black-drip"];
 const themeLabels = {
@@ -227,6 +228,9 @@ const getLocations = () => JSON.parse(localStorage.getItem(LOCATIONS_KEY) || "[]
 const setAuth = (value) => localStorage.setItem(AUTH_KEY, JSON.stringify(value));
 const setCart = (value) => localStorage.setItem(CART_KEY, JSON.stringify(value));
 const setLocations = (value) => localStorage.setItem(LOCATIONS_KEY, JSON.stringify(value));
+const setPendingAction = (value) => localStorage.setItem(PENDING_ACTION_KEY, JSON.stringify(value));
+const getPendingAction = () => JSON.parse(localStorage.getItem(PENDING_ACTION_KEY) || "null");
+const clearPendingAction = () => localStorage.removeItem(PENDING_ACTION_KEY);
 
 const showToast = (message) => {
   let toast = document.querySelector(".toast");
@@ -338,9 +342,10 @@ const phoneIsValid = (phone) => /^\+91\d{10}$/.test(phone.trim());
 
 const authMeetsCommerceRequirements = (auth) => Boolean(auth && auth.name && auth.gender && phoneIsValid(auth.phone || ""));
 
-const redirectToLogin = (slug, next = null) => {
-  if (slug) {
-    localStorage.setItem(PENDING_PRODUCT_KEY, slug);
+const redirectToLogin = (payload = null, next = null) => {
+  if (payload?.slug) {
+    localStorage.setItem(PENDING_PRODUCT_KEY, payload.slug);
+    setPendingAction(payload);
   }
   const returnPath = next || `${window.location.pathname.split("/").pop() || "home.html"}${window.location.search}`;
   window.location.href = `login.html?return=${encodeURIComponent(returnPath)}`;
@@ -469,7 +474,14 @@ const setupProductActions = () => {
     }
 
     if (!authMeetsCommerceRequirements(auth)) {
-      redirectToLogin(slug);
+      redirectToLogin(
+        {
+          slug,
+          size: selectedSize.value,
+          action: button.dataset.productAction,
+        },
+        button.dataset.productAction === "buy" ? "locations.html?confirm=1&next=payment.html" : null
+      );
       return;
     }
 
@@ -477,14 +489,7 @@ const setupProductActions = () => {
     showToast(`${PRODUCT_CATALOG[slug].name} added to cart.`);
 
     if (button.dataset.productAction === "buy") {
-      if (!getLocations().length) {
-        showToast("Please save a delivery location before buying.");
-        window.setTimeout(() => {
-          window.location.href = "locations.html";
-        }, 700);
-        return;
-      }
-      window.location.href = "payment.html";
+      window.location.href = "locations.html?confirm=1&next=payment.html";
     }
   });
 
@@ -641,7 +646,19 @@ const setupLogin = () => {
     }
 
     setAuth(profile);
-    window.location.href = `index.html?next=${encodeURIComponent(returnUrl)}`;
+    const pending = getPendingAction();
+
+    if (pending?.slug && pending?.size) {
+      addItemToCart(pending.slug, pending.size);
+      if (pending.action === "buy") {
+        clearPendingAction();
+        window.location.href = "locations.html?confirm=1&next=payment.html";
+        return;
+      }
+      clearPendingAction();
+    }
+
+    window.location.href = returnUrl;
   });
 
   skip?.addEventListener("click", () => {
@@ -686,8 +703,40 @@ const renderProfile = () => {
   form.elements.gender.value = auth.gender || "";
 };
 
+const renderProfileSide = () => {
+  const side = document.querySelector("[data-profile-side]");
+  if (!side) return;
+
+  const auth = getAuth();
+
+  if (!authMeetsCommerceRequirements(auth)) {
+    side.innerHTML = `
+      <h3>Profile requirements</h3>
+      <ul class="info-list">
+        <li>Gender is mandatory.</li>
+        <li>Phone must start with +91 and stay within India format.</li>
+        <li>Email is optional.</li>
+      </ul>
+      <p style="margin-top: 18px;"><a class="profile-link" href="locations.html">Manage saved locations</a></p>
+    `;
+    return;
+  }
+
+  side.innerHTML = `
+    <h3>User Info</h3>
+    <ul class="info-list">
+      <li>Username: ${auth.name}</li>
+      <li>Phone: ${auth.phone}</li>
+      <li>Email: ${auth.email || "Not provided"}</li>
+      <li>Gender: ${auth.gender}</li>
+    </ul>
+    <p style="margin-top: 18px;"><a class="profile-link" href="locations.html">Manage saved locations</a></p>
+  `;
+};
+
 const setupProfile = () => {
   renderProfile();
+  renderProfileSide();
   const form = document.querySelector("[data-profile-form]");
   if (!form) return;
 
@@ -711,6 +760,7 @@ const setupProfile = () => {
     }
     setAuth(updated);
     updateAuthLinks();
+    renderProfileSide();
     showToast("Profile updated.");
   });
 };
@@ -719,6 +769,9 @@ const renderLocations = () => {
   const list = document.querySelector("[data-location-list]");
   if (!list) return;
 
+  const params = new URLSearchParams(window.location.search);
+  const confirmMode = params.get("confirm") === "1";
+  const next = params.get("next") || "payment.html";
   const locations = getLocations();
   list.innerHTML = "";
 
@@ -736,7 +789,10 @@ const renderLocations = () => {
           <h3>${location.label}</h3>
           <p class="meta-copy">${location.type}</p>
         </div>
-        <button class="ghost-button" type="button" data-remove-location="${index}">Remove</button>
+        <div class="button-row">
+          ${confirmMode ? `<button class="primary-button" type="button" data-confirm-location="${index}" data-next-page="${next}">Confirm</button>` : ""}
+          <button class="ghost-button" type="button" data-remove-location="${index}">Remove</button>
+        </div>
       </div>
       <p class="meta-copy">${location.houseNumber}, ${location.fullAddress}, ${location.state} - ${location.pincode}</p>
       <p class="meta-copy">${location.mapLocation || ""}</p>
@@ -751,6 +807,17 @@ const setupLocations = () => {
   const form = document.querySelector("[data-location-form]");
   const mapButton = document.querySelector("[data-map-detect]");
   if (!form) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const confirmMode = params.get("confirm") === "1";
+  const next = params.get("next") || "payment.html";
+  const heading = document.querySelector("[data-location-heading]");
+  const copy = document.querySelector("[data-location-copy]");
+
+  if (confirmMode) {
+    if (heading) heading.textContent = "Confirm your delivery location";
+    if (copy) copy.textContent = "If you already saved a location, confirm it below. Otherwise save a new one and continue directly to payment.";
+  }
 
   mapButton?.addEventListener("click", () => {
     if (!navigator.geolocation) {
@@ -808,9 +875,21 @@ const setupLocations = () => {
     form.reset();
     renderLocations();
     showToast("Location saved.");
+
+    if (confirmMode) {
+      window.setTimeout(() => {
+        window.location.href = next;
+      }, 700);
+    }
   });
 
   document.body.addEventListener("click", (event) => {
+    const confirmButton = event.target.closest("[data-confirm-location]");
+    if (confirmButton) {
+      window.location.href = confirmButton.dataset.nextPage || "payment.html";
+      return;
+    }
+
     const button = event.target.closest("[data-remove-location]");
     if (!button) return;
     const all = getLocations();

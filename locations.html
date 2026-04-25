@@ -29,9 +29,10 @@
         <section class="locations-layout">
           <div class="form-card reveal">
             <p class="eyebrow">Locations</p>
-            <h3>Location is mandatory before checkout</h3>
+            <h3 data-location-heading>Location is mandatory before checkout</h3>
+            <p class="copy" data-location-copy>Save a location once and reuse it later. During BUY NOW flow you will confirm a saved address here before going to payment.</p>
             <form class="form-grid" data-location-form>
-              <input class="input-field" type="text" name="label" placeholder="Location label like Home or Work" />
+              <input class="input-field" type="text" name="label" placeholder="Name" />
               <select class="select-field" name="type">
                 <option value="Home">Home</option>
                 <option value="Work">Work</option>
@@ -39,7 +40,7 @@
               </select>
               <div class="button-row">
                 <input class="input-field" type="text" name="mapLocation" placeholder="Map location preview" />
-                <button class="icon-button" type="button" data-map-detect>📍</button>
+                <button class="icon-button" type="button" data-map-detect>🗺️ Map</button>
               </div>
               <input class="input-field" type="text" name="houseNumber" placeholder="House number" />
               <textarea class="textarea-field" name="fullAddress" placeholder="Full address"></textarea>
@@ -53,7 +54,7 @@
           <div class="grid-2" data-location-list style="grid-template-columns: 1fr;"></div>
         </section>
       </main>
-      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved</div></footer>
+      <footer class="site-footer"><div class="copyright">Debargha-2026. All rights reserved.</div></footer>
     </div>
     <script src="script.js"></script>
   </body>
