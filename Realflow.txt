@@ -1,0 +1,19 @@
+🔥 Real Flow (My Website)
+
+User visits website
+↓
+User clicks product
+↓
+User clicks "Buy"
+↓
+Stripe checkout
+↓
+Payment successful
+↓
+Order saved in Supabase
+↓
+Email sent via Resend
+↓
+User sees confirmation page
+
+Boom — real e-commerce.

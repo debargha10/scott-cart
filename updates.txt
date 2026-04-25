@@ -1,0 +1,170 @@
+need to remove the 3d model.
+black background should be changed.
+Images insert to folder
+insert into code
+running all html after commit.
+LOADING SIGN
+
+
+
+
+
+
+
+
+
+
+turn all html file to tsx file (react).
+backend dev
+
+
+
+
+
+
+
+🔥 Features That Make This Project Stand Out
+
+I'm including:
+
+Ecommerce Core
+Product catalog
+Product detail page
+Cart
+Checkout
+Payment
+
+
+✅ User System
+
+ Login / Signup
+Profile
+Gender selection
+Phone validation (+91 India only).
+
+
+🤖 Advanced UX :
+
+Theme switcher
+Dark Apple-style UI
+Animations
+Multi-page navigation
+
+
+🌐 Advanced Commerce :
+
+Multiple locations
+Payment (UPI + card)
+Cart totals
+Stock system
+
+
+ 💡 Premium Features :
+
+3D landing page
+Welcome animation
+Lil Uzi Vert collection
+Limited time drops
+
+🏗️ Main risks:
+
+Scope explosion
+Too many features
+No backend yet
+Hard to maintain.
+
+
+⚙️👷🏻‍♂️🛠️🔧 Recommended Build Order (Important) :
+
+Phase 1 (Finish First)
+Dark Apple UI
+Navbar redesign
+Homepage
+
+
+Phase 2 :
+Product grid
+Product detail page
+
+
+Phase 3 :
+Cart system
+Add to cart
+
+
+Phase 4:
+Login system
+Profile
+
+
+Phase 5: 
+Checkout
+Payment
+
+
+Phase 6 :
+3D + animation polish
+
+
+
+
+
+
+Advanced: 
+
+
+smooth fade transitions
+blur transitions
+parallax movement OF 100 IMAGES.
+
+
+UI polish checklist:
+
+Spacing
+
+consistent padding
+grid alignment
+section breathing space
+
+
+
+Hover effects
+button glow
+product lift
+image zoom
+
+
+Animations
+
+fade in
+slide up
+scale hover
+
+
+Responsive
+
+
+mobile nav
+responsive grid
+fluid typography.
+
+
+MAINS 
+
+Intro / Splash screen(animated welcome page (3–4 seconds)
+
+
+CAN DO LATER :
+
+fade out
+main website loads
+
+We can add:
+
+logo animation
+particles
+3D intro later
+
+
+
+STRIPE FOR PAYMENTS
