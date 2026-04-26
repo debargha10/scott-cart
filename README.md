@@ -16,8 +16,27 @@ shopping experience.
 
 ## Run Locally ⚙️ 🦾 🧑🏻‍💻
 
-For now, the project is a static prototype and can be opened directly in the
-browser via `index.html`.
+This project now runs as a React + TypeScript app powered by Vite.
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the dev server:
+```bash
+npm run dev
+```
+
+3. Open the local URL shown by Vite, usually:
+```bash
+http://127.0.0.1:4173/
+```
+
+4. For a production build:
+```bash
+npm run build
+```
 
 ## Long-Term Goal 🚀
 
